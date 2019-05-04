@@ -1,0 +1,199 @@
+class Expo
+{
+  expoid;
+  Boolean voteRegistrationOpen;
+  Boolean statisticOpenToPublic;
+  
+  voteRegistration
+  {
+      voteRegistrationClosed
+      {
+      openRegistration -> voteRegistrationOpen;
+      }
+    
+      voteRegistrationOpen
+      {
+      closeRegistration -> voteRegistrationClosed;
+      }
+  }
+  
+  statisticsStatus
+  {
+      statisticsOpen
+      {
+      closeStatistics -> statisticsClosed;
+      }
+    
+   statisticsClosed
+   {
+      openStatistics -> statisticsOpen;
+    }
+  }
+}
+
+
+class Stand
+{
+  standid;
+  name;
+  *--1 Expo;
+  
+  RegisterStatus
+  {
+    visitedGivenURL
+    {
+      infoInput -> infoUpdated;
+      requestQR -> viewingQRCode;
+    }
+    infoUpdated{}
+    viewingQRCode{}
+  }
+}
+
+class Study
+{
+  studyid;
+  studyName;
+  1--* Stand;
+}
+
+class Institute
+{
+  instituteid;
+  1--* Study;
+}
+
+class Vote
+{
+  voteid;
+  *--1 Stand;
+  *--1 Visitor;
+}
+
+class Visitor
+{
+  visitorid;
+  
+  Voting
+  {
+    QRCodeScanned 
+    {
+      entry/{checkIfRegistered();}
+      register -> registeringNewVisitor;
+      alreadyRegistered -> viewingStandPage;
+    }
+    
+    registeringNewVisitor
+    {
+      phoneNumberEntered -> /{registerNewVisitor();} registered;
+    }
+    
+    registered
+    {
+      redirect -> viewingStandPage;
+    }
+    
+    viewingStandPage
+    {
+      voteButtonPushed [registered] -> /{registerNewVote();} voteRegistered;
+    }
+    
+    voteRegistered{}
+  }
+}
+
+class Admin
+{
+  userName;
+  adminId;
+  hashedPassword;
+  
+  *--1 Expo;
+  
+  status
+  {
+    notLoggedIn
+    {
+      login [loginInformationOk] -> loggedIn;
+    }
+    
+    loggedIn
+    {
+      selectingAction{}
+      
+      addNewAdmin -> /{addNewAdmin(new Admin(userName, password));} selectingAction;
+      
+      updateExpo -> /{expo.update();} selectingAction;
+      
+      registerNewStand -> registeringNewStand;
+      
+      browseStands -> browsingStands;
+      
+      viewStatistics -> viewingStatistics;
+    
+      registeringNewStand
+    {
+      entry/{createNewStand();}
+      editManually -> editingStand;
+      createEditURL ->  viewingStandURL;
+    }
+                                   
+    viewingStandURL
+    {
+      returnToAdminPage -> selectingAction;
+    }
+                                   
+    editingStand
+    {
+      saveEdits -> /{updateStand();} browsingStands;
+    }
+    
+    browsingStands
+    {
+      
+    }
+                                   
+    viewingStatistics{returnToActions -> selectingAction;}
+    
+    }
+    
+   
+  }
+}
+
+//$?[End_of_model]$?
+
+class Expo
+{
+  position 50 30 109 45;
+}
+
+class Stand
+{
+  position 50 130 109 45;
+}
+
+class Study
+{
+  position 50 230 109 45;
+}
+
+class Institute
+{
+  position 50 330 109 45;
+}
+
+class Vote
+{
+  position 50 430 109 45;
+}
+
+class Visitor
+{
+  position 250 30 109 45;
+}
+
+class Admin
+{
+  position 250 130 109 45;
+}
