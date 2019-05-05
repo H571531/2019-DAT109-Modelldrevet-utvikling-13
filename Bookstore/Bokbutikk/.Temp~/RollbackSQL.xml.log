@@ -1,0 +1,26 @@
+[23 apr 2019 13:23:37] DEBUG Executing SQL script
+[23 apr 2019 13:23:37] INFO ================================================================================
+[23 apr 2019 13:23:37] INFO onError= 'stop'
+[23 apr 2019 13:23:37] INFO autoCommit= 'false'
+[23 apr 2019 13:23:37] INFO username= 'tohovi'
+[23 apr 2019 13:23:37] INFO outputPath= 'D:\WebRatio\Workspace\Bokbutikk\.Temp~\RollbackSQL.xml'
+[23 apr 2019 13:23:37] INFO outputLogPath= 'D:\WebRatio\Workspace\Bokbutikk\.Temp~\RollbackSQL.xml.log'
+[23 apr 2019 13:23:37] INFO encoding= ''
+[23 apr 2019 13:23:37] INFO driverClass= 'com.mysql.jdbc.Driver'
+[23 apr 2019 13:23:37] INFO sqlScript= 'D:\WebRatio\Workspace\Bokbutikk\.Temp~\RollbackSQL.sql'
+[23 apr 2019 13:23:37] INFO eventSocketPort= '63322'
+[23 apr 2019 13:23:37] INFO statementSeparator= ';'
+[23 apr 2019 13:23:37] INFO derby.system.home= 'D:\WebRatio\Workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[23 apr 2019 13:23:37] INFO password= 'aufe8266'
+[23 apr 2019 13:23:37] INFO url= 'jdbc:mysql://localhost:3306/bokbutikk'
+[23 apr 2019 13:23:37] INFO ================================================================================
+[23 apr 2019 13:23:37] INFO Connecting to the Database...
+[23 apr 2019 13:23:37] INFO Database connection estabilished
+[23 apr 2019 13:23:37] INFO transaction isolation: 4
+[23 apr 2019 13:23:37] DEBUG ================================================================================
+[23 apr 2019 13:23:37] DEBUG Executing SQL script file: D:\WebRatio\Workspace\Bokbutikk\.Temp~\RollbackSQL.sql
+[23 apr 2019 13:23:37] DEBUG Executing statement:  drop table `category`
+[23 apr 2019 13:23:37] DEBUG ================================================================================
+[23 apr 2019 13:23:37] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[23 apr 2019 13:23:37] INFO Database connection closed
+[23 apr 2019 13:23:37] DEBUG Total time: 484 milliseconds

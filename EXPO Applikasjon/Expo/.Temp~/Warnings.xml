@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Warnings> 
+  <Warning xpath="id('mov1#hym2#page12#pwu2#ln44')" rootXPath="id('mov1')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Tilbake"> 
+    <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Tilbake'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#icu13#oln37')" rootXPath="id('mov1')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Start"> 
+    <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Start'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#scu4#oln50')" rootXPath="id('mov1')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Statistikk er &#229;pent tilgjengelig"> 
+    <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Statistikk er &#229;pent tilgjengelig'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#scu4#kln13')" rootXPath="id('mov1')" key="AUTOMATIC_COUPLING_WITHOUT_EFFECT" label="Statistikk er ikke tilgjengelig enda"> 
+    <Message>Neither explicit nor implicit parameters' bindings could be found for the flow 'Statistikk er ikke tilgjengelig enda'</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="automaticCoupling" value="">Remove the 'Automatic Coupling' property</Resolution> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#seu6')" rootXPath="id('mov1')" error="false" label="Hent aktiv Expo" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO flow(s) for the operation 'Hent aktiv Expo'</Message> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#seu15')" rootXPath="id('mov1')" error="false" label="Hent aktiv expo" key="NO_OUTGOING_OK_LINKS"> 
+    <Message>No outgoing OK flow(s) for the operation 'Hent aktiv expo'</Message> 
+  </Warning>  
+  <Warning xpath="id('mov1#hym2#seu15')" rootXPath="id('mov1')" error="false" label="Hent aktiv expo" key="NO_OUTGOING_KO_LINKS"> 
+    <Message>No outgoing KO flow(s) for the operation 'Hent aktiv expo'</Message> 
+  </Warning>  
+  <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject"> 
+    <Message>Security Warning: the Admin Area generation is enabled</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="adminArea" value="">Remove the 'Admin Area' property</Resolution> 
+  </Warning>  
+  <Warning xpath="/WebProject" rootXPath="/WebProject" key="" label="WebProject" tab="security"> 
+    <Message>Security Warning: the project contains a protected resource but the 'Protect URL' property is missing</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.ChangeAttributeResolutionGenerator" attribute="protectURL" value="true">Set the 'Protect URL' property to 'true'</Resolution> 
+  </Warning> 
+</Warnings>

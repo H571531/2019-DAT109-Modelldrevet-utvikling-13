@@ -1,0 +1,106 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="10" gr:y="250" id="sv1#area1#page1" name="Vote" protected="false" secure="false" customURLName="stand" urlFragment="sv1#area1#page1#dau1#su1#kcond1.ent2#att2">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="0" id="sv1#area1#page1#dau1" name="Stand" entity="ent2" displayAttributes="ent2#att3 ent2#att6 rel2#role3.ent3#att9 rel2#role3.rel3#role5.ent4#att17" linkOrder="sv1#area1#page1#dau1#ln1">
+      <Selector id="sv1#area1#page1#dau1#su1" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#area1#page1#dau1#su1#kcond1" name="StandId" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv1#area1#page1#dau1#ln1" name="Stem p&#229; stand!" to="sv1#area1#miu1" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page1#dau1#ln1#par1" name="standid_StandId" source="data.ent2#att2" target="sv1#area1#miu1.mov1#opm1#icu1#icp1"/>
+      </Link>
+      <Link id="sv1#area1#page1#dau1#ln58" name="URL til poster" to="sv1#area1#page1#mssu6" type="transport" validate="true">
+        <LinkParameter id="sv1#area1#page1#dau1#ln58#par94" name="poster_standURL" source="data.ent2#att19" target="sv1#area1#page1#mssu6.sv1#area1#page1#mssu6#ph1"/>
+      </Link>
+    </DataUnit>
+    <MultiMessageUnit gr:x="125" gr:y="20" id="sv1#area1#page1#mssu1" name="Confirmation"/>
+    <MultiMessageUnit gr:x="275" gr:y="245" id="sv1#area1#page1#mssu6" name="Poster" customDescriptor="false" gr:showAllParts="false">
+      <Placeholder id="sv1#area1#page1#mssu6#ph1" name="standURL"/>
+      <Message xml:space="preserve">&lt;img src="$$standURL$$" style="width:30em"&gt;</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page1#dau1">
+          <layout:Link link="sv1#area1#page1#dau1#ln1"/>
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="rel2#role3.ent3#att9"/>
+          <layout:Attribute attribute="rel2#role3.rel3#role5.ent4#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page1#mssu1"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page1#mssu6">
+          <layout:LayoutParameter name="contentType" value="text/html" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

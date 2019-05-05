@@ -1,0 +1,16 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="410" gr:y="100" id="mov1#hym1" name="Se handlevogn">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="220" gr:y="325" id="mov1#hym1#icu3">
+      <OKLink id="mov1#hym1#icu3#oln35" name="Start" to="mov1#hym1#page9#miu18" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1055" gr:y="320" id="mov1#hym1#okcu8" name="OK Port8"/>
+    <ModuleInstanceUnit gr:x="900" gr:y="690" id="mov1#hym1#miu23" action="true" name="Oppdater antall" moduleId="mov1#opm6">
+      <OKLink id="mov1#hym1#miu23#oln39" name="Handlevogn oppdatert" to="mov1#hym1#page9" automaticCoupling="true" gr:bendpoints="-114,-71,266,229"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="990" gr:y="180" id="mov1#hym1#miu25" action="true" name="Fjern alle varer" moduleId="mov1#opm7">
+      <OKLink id="mov1#hym1#miu25#oln44" name="Alle varer fjernet" to="mov1#hym1#page9#mssu5" ajaxOpenWindow="true" ajaxWindowModal="true" ajaxWindowClosable="true">
+        <LinkParameter id="mov1#hym1#miu25#oln44#par66" name="Handlevognen er t&#248;mt!_Shown Messages" sourceValue="Handlevognen er t&amp;oslash;mt!" target="mov1#hym1#page9#mssu5.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</HybridModule>

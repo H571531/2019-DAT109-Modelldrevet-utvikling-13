@@ -1,0 +1,36 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="110" gr:y="205" id="mov1#opm2" name="Sjekk om innlogget">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm2#icu2" gr:x="30" gr:y="60" linkOrder="mov1#opm2#icu2#ln38">
+      <Link id="mov1#opm2#icu2#ln9" name="Flow9" to="mov1#opm2#stu2" type="transport" validate="true">
+        <LinkParameter id="mov1#opm2#icu2#ln9#par14" name="StandId_ValgtStand" source="mov1#opm2#icu2#icp3" target="mov1#opm2#stu2.ctx1"/>
+      </Link>
+      <InputCollectorParameter id="mov1#opm2#icu2#icp3" name="StandId"/>
+      <OKLink id="mov1#opm2#icu2#oln8" name="Start" to="mov1#opm2#seu2" automaticCoupling="true"/>
+      <Link id="mov1#opm2#icu2#ln38" name="Send tilbake standId" to="mov1#opm2#okcu3" type="transport" validate="true">
+        <LinkParameter id="mov1#opm2#icu2#ln38#par56" name="StandId_Valg Stand" source="mov1#opm2#icu2#icp3" target="mov1#opm2#okcu3#ocp8"/>
+      </Link>
+    </InputCollectorUnit>
+    <SetUnit gr:x="400" gr:y="60" id="mov1#opm2#stu2" name="Husk valgt stand" contextParameters="ctx1"/>
+    <SelectorUnit gr:x="310" gr:y="180" id="mov1#opm2#seu2" name="Get Visitor" entity="ent6">
+      <Selector id="mov1#opm2#seu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm2#seu2#su3#kcond5" name="VisitorId" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm2#seu2#oln9" name="Send Visitor hvis funnet" to="mov1#opm2#inn2">
+        <LinkParameter id="mov1#opm2#seu2#oln9#par16" name="visitorId_Input" source="ent6#att12Array" target="mov1#opm2#inn2.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="230" gr:y="400" id="mov1#opm2#gtu1" name="Get visitorTlf" contextParameters="ctx2" linkOrder="mov1#opm2#gtu1#ln10">
+      <Link id="mov1#opm2#gtu1#ln10" name="Hent aktiv Visitor fra session" to="mov1#opm2#seu2" type="transport" validate="true">
+        <LinkParameter id="mov1#opm2#gtu1#ln10#par15" name="VisitorTlf_VisitorId [visitorId]" source="mov1#opm2#gtu1.ctx2" target="mov1#opm2#seu2#su3#kcond5.ent6#att12"/>
+      </Link>
+    </GetUnit>
+    <IsNotNullUnit gr:x="490" gr:y="200" id="mov1#opm2#inn2" name="Registrert fra f&#248;r?">
+      <OKLink id="mov1#opm2#inn2#oln12" name="Registrert fra f&#248;r" to="mov1#opm2#okcu3" automaticCoupling="true"/>
+      <KOLink id="mov1#opm2#inn2#kln4" name="Ikke registrert fra f&#248;r" to="mov1#opm2#kocu2" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <KOCollectorUnit gr:x="690" gr:y="225" id="mov1#opm2#kocu2" name="Ikke registrert"/>
+    <OKCollectorUnit gr:x="710" gr:y="90" id="mov1#opm2#okcu3" name="Registrert og innlogget">
+      <OutputCollectorParameter id="mov1#opm2#okcu3#ocp8" name="Valg Stand"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

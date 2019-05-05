@@ -1,0 +1,41 @@
+Buildfile: C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\WebRatio\plugins\com.webratio.generator.webapp_7.2.18.201903231300\DataModel\JavaCompile.xml
+
+main:
+    [javac] Compiling 9 source files to C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes
+    [javac] ----------
+    [javac] 1. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 21)
+    [javac] 	private com.webratio.webapp.Stand_AntallStemmerBean _antallStemmerBean;
+    [javac] 	        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] com.webratio.webapp.Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 2. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 107)
+    [javac] 	com.webratio.webapp.Stand_AntallStemmerBean __antallStemmer = this.getAntallStemmerBean();
+    [javac] 	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] com.webratio.webapp.Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 3. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 107)
+    [javac] 	com.webratio.webapp.Stand_AntallStemmerBean __antallStemmer = this.getAntallStemmerBean();
+    [javac] 	                                                                   ^^^^^^^^^^^^^^^^^^^^
+    [javac] The method getAntallStemmerBean() from the type Stand refers to the missing type Stand_AntallStemmerBean
+    [javac] ----------
+    [javac] 4. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 118)
+    [javac] 	public com.webratio.webapp.Stand_AntallStemmerBean getAntallStemmerBean() {
+    [javac] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] com.webratio.webapp.Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 5. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 119)
+    [javac] 	return _antallStemmerBean;
+    [javac] 	       ^^^^^^^^^^^^^^^^^^
+    [javac] Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 6. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 122)
+    [javac] 	public void setAntallStemmerBean(com.webratio.webapp.Stand_AntallStemmerBean _antallStemmerBean) {
+    [javac] 	                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] com.webratio.webapp.Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 7. ERROR in C:\WebRatio\WebRatio Community Platform 7.2.18.x64bit\Tomcat\webapps\Expo\WEB-INF\classes\com\webratio\webapp\Stand.java (at line 123)
+    [javac] 	this._antallStemmerBean = _antallStemmerBean;
+    [javac] 	^^^^^^^^^^^^^^^^^^^^^^^
+    [javac] Stand_AntallStemmerBean cannot be resolved to a type
+    [javac] ----------
+    [javac] 7 problems (7 errors)

@@ -1,0 +1,10 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="360" gr:y="90" id="mov1#opm6#opg5" name="Oppdatering" transaction="true">
+  <OperationUnits>
+    <ModifyUnit gr:x="0" gr:y="0" id="mov1#opm6#opg5#mfu2" name="Oppdater varelinje" entity="ent3">
+      <Selector id="mov1#opm6#opg5#mfu2#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm6#opg5#mfu2#su21#kcond18" name="KeyCondition17" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm6#opg5#mfu2#oln40" name="Handlevogn oppdatert" to="mov1#opm6#okcu10" automaticCoupling="true"/>
+    </ModifyUnit>
+  </OperationUnits>
+</OperationGroup>

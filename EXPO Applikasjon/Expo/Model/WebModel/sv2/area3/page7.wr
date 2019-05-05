@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="65" gr:y="115" id="sv2#area3#page7" name="Browse stands" linkOrder="sv2#area3#page7#ln31" protected="false">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv2#area3#page7#pwu1" name="Stands" sortable="true" checkable="false" useCountQuery="false" entity="ent2" linkOrder="sv2#area3#page7#pwu1#ln27" displayAttributes="ent2#att2 ent2#att3 ent2#att6 rel2#role3.ent3#att9 rel2#role3.rel3#role5.ent4#att17">
+      <Link id="sv2#area3#page7#pwu1#ln27" name="Se detaljer" to="sv2#area3#page8#dau2" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page7#pwu1">
+          <layout:Link link="sv2#area3#page7#pwu1#ln27"/>
+          <layout:Attribute attribute="ent2#att2"/>
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="rel2#role3.ent3#att9"/>
+          <layout:Attribute attribute="rel2#role3.rel3#role5.ent4#att17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area3#page7#ln31" name="Tilbake til administrasjon" to="sv2#area2#page6" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="-397,-40,443,-95"/>
+</Page>

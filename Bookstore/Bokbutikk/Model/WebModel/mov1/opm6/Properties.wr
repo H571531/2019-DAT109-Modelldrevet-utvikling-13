@@ -1,0 +1,13 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="125" gr:y="165" id="mov1#opm6" name="Oppdater varer i handlevogn">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm6#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm6#icu9#icp6" name="Vare"/>
+      <InputCollectorParameter id="mov1#opm6#icu9#icp7" name="Nytt antall"/>
+      <OKLink id="mov1#opm6#icu9#oln37" name="Send vareId som skal oppdateres" to="mov1#opm6#opg5#mfu2">
+        <LinkParameter id="mov1#opm6#icu9#oln37#par51" name="Vare_KeyCondition17 [OrderLineId]" source="mov1#opm6#icu9#icp6" target="mov1#opm6#opg5#mfu2#su21#kcond18.ent3#att33"/>
+        <LinkParameter id="mov1#opm6#icu9#oln37#par52" name="Vare_ProductQuantity" source="mov1#opm6#icu9#icp7" target="mov1#opm6#opg5#mfu2.ent3#att13"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="580" gr:y="100" id="mov1#opm6#okcu10" name="OK Port10"/>
+  </OperationUnits>
+</OperationModule>

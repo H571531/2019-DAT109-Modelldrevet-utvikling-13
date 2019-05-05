@@ -1,0 +1,120 @@
+[30 apr 2019 16:33:47] Building database metadata model
+[30 apr 2019 16:33:47] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@2111e072, includeTables=true, username=tohovi, outputLogPath=D:\WebRatio\Workspace\Expo\.Temp~\DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=D:\WebRatio\Workspace\Expo\.Temp~\DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=D:\WebRatio\Workspace\.metadata\.plugins\com.webratio.commons.db\derby, url=jdbc:mysql://localhost:3306/exposystem, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=57706}
+[30 apr 2019 16:33:47] URL: jdbc:mysql://localhost:3306/exposystem
+[30 apr 2019 16:33:47] Product name: MySQL
+[30 apr 2019 16:33:47] Product version: 8.0.15
+[30 apr 2019 16:33:47] Driver name: MySQL Connector Java
+[30 apr 2019 16:33:47] Driver version: mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )
+[30 apr 2019 16:33:47] Driver major version: 5
+[30 apr 2019 16:33:47] Driver minor version: 1
+[30 apr 2019 16:33:47] Identifier quote string: 1
+[30 apr 2019 16:33:47] Retrieving schemas
+[30 apr 2019 16:33:47] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
+[30 apr 2019 16:33:47]   Found 'admin' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'aktivexpo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'expo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'group_module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'institute' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'stand' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'study' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'user_group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'visitor' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'vote' [type = TABLE]
+[30 apr 2019 16:33:47]   Found 'stand_antallstemmer_view' [type = VIEW]
+[30 apr 2019 16:33:47] Retrieving columns for 'admin' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'admin' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: oid
+[30 apr 2019 16:33:47] Retrieving columns for 'aktivexpo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: expo_expoid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'aktivexpo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: oid
+[30 apr 2019 16:33:47] Retrieving columns for 'expo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: expoid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: voteregistrationopen [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: statisticsopentopublic [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'expo' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: expoid
+[30 apr 2019 16:33:47] Retrieving columns for 'group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: oid
+[30 apr 2019 16:33:47] Retrieving columns for 'group_module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'group_module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: group_oid
+[30 apr 2019 16:33:47]   Found primary key column: module_oid
+[30 apr 2019 16:33:47] Retrieving columns for 'institute' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: instituteid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: institutename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'institute' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: instituteid
+[30 apr 2019 16:33:47] Retrieving columns for 'module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'module' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: oid
+[30 apr 2019 16:33:47] Retrieving columns for 'stand' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: standid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: standname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: authors [type = LONGTEXT][SQL/XOPEN type = -1][size = 2147483647][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: token [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: expo_expoid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: study_studyid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: poster [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'stand' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: standid
+[30 apr 2019 16:33:47] Retrieving columns for 'study' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: studyid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: studyname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: institute_instituteid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'study' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: studyid
+[30 apr 2019 16:33:47] Retrieving columns for 'user_group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: admin_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'user_group' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: admin_oid
+[30 apr 2019 16:33:47]   Found primary key column: group_oid
+[30 apr 2019 16:33:47] Retrieving columns for 'visitor' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: visitorid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: token [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'visitor' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: visitorid
+[30 apr 2019 16:33:47] Retrieving columns for 'vote' [type = TABLE]
+[30 apr 2019 16:33:47]   Found column: voteid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: stand_standid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: visitor_visitorid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: votevalue [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'vote' [type = TABLE]
+[30 apr 2019 16:33:47]   Found primary key column: voteid
+[30 apr 2019 16:33:47] Retrieving columns for 'stand_antallstemmer_view' [type = VIEW]
+[30 apr 2019 16:33:47]   Found column: standid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[30 apr 2019 16:33:47]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 19][dec. digits = 0]
+[30 apr 2019 16:33:47] Retrieving primary keys for 'stand_antallstemmer_view' [type = VIEW]
+[30 apr 2019 16:33:47] Database metadata retrieved (100 ms)
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'admin' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'aktivexpo' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'expo' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'group' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'group_module' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'institute' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'module' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'stand' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'study' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'user_group' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'visitor' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'vote' [type = TABLE]
+[30 apr 2019 16:33:47] Retrieving auto-increment columns for 'stand_antallstemmer_view' [type = VIEW]
+[30 apr 2019 16:33:47] Database connection closed

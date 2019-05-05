@@ -1,0 +1,38 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="200" gr:y="430" id="mov1#opm2" name="Hent bruker">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm2#icu2" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm2#icu2#oln1" name="OKFlow1" to="mov1#opm2#seu1" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="305" gr:y="115" id="mov1#opm2#seu1" name="Hent bruker" entity="ent1">
+      <Selector id="mov1#opm2#seu1#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm2#seu1#su2#kcond1" name="BrukerId" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm2#seu1#oln2" name="OKFlow2" to="mov1#opm2#inn1">
+        <LinkParameter id="mov1#opm2#seu1#oln2#par9" name="CustomerId_Input" source="ent1#att1Array" target="mov1#opm2#inn1.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <GetUnit gr:x="245" gr:y="300" id="mov1#opm2#gtu4" name="Hent brukerId" contextParameters="UserCtxParam" linkOrder="mov1#opm2#gtu4#ln2">
+      <Link id="mov1#opm2#gtu4#ln2" name="Flow2" to="mov1#opm2#seu1" type="transport" validate="true">
+        <LinkParameter id="mov1#opm2#gtu4#ln2#par7" name="UserCtxParam.oid_BrukerId [CustomerId]" source="mov1#opm2#gtu4.UserCtxParam" target="mov1#opm2#seu1#su2#kcond1.ent1#att1"/>
+      </Link>
+    </GetUnit>
+    <IsNotNullUnit gr:x="515" gr:y="140" id="mov1#opm2#inn1" name="Finnes bruker?">
+      <OKLink id="mov1#opm2#inn1#oln3" name="OKFlow3" to="mov1#opm2#okcu2">
+        <LinkParameter id="mov1#opm2#inn1#oln3#par10" name="Input Value_Customer" source="inputValue" target="mov1#opm2#okcu2#ocp4"/>
+      </OKLink>
+      <KOLink id="mov1#opm2#inn1#kln1" name="KOFlow1" to="mov1#opm2#cru4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <OKCollectorUnit gr:x="900" gr:y="145" id="mov1#opm2#okcu2" name="OK Port2">
+      <OutputCollectorParameter id="mov1#opm2#okcu2#ocp4" name="Customer"/>
+    </OKCollectorUnit>
+    <CreateUnit gr:x="535" gr:y="345" id="mov1#opm2#cru4" name="Opprett ny bruker" entity="ent1" linkOrder="mov1#opm2#cru4#ln4">
+      <Link id="mov1#opm2#cru4#ln4" name="Flow4" to="mov1#opm2#stu1" type="transport" validate="true">
+        <LinkParameter id="mov1#opm2#cru4#ln4#par6" name="CustomerId_UserCtxParam.oid" source="ent1#att1Array" target="mov1#opm2#stu1.UserCtxParam"/>
+      </Link>
+      <OKLink id="mov1#opm2#cru4#oln4" name="OKFlow4" to="mov1#opm2#okcu2">
+        <LinkParameter id="mov1#opm2#cru4#oln4#par8" name="CustomerId_Customer" source="ent1#att1Array" target="mov1#opm2#okcu2#ocp4"/>
+      </OKLink>
+    </CreateUnit>
+    <SetUnit gr:x="760" gr:y="395" id="mov1#opm2#stu1" name="Lagr bruker i session" contextParameters="UserCtxParam"/>
+  </OperationUnits>
+</OperationModule>

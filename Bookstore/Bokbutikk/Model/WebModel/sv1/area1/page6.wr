@@ -1,0 +1,47 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="600" gr:y="195" id="sv1#area1#page6" name="Add Product to Cart">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#area1#page6#enu1" name="Amount to add" linkOrder="sv1#area1#page6#enu1#ln9" entity="ent4">
+      <Field id="sv1#area1#page6#enu1#fld1" name="ProductId" type="integer" modifiable="false" hidden="true" attribute="ent4#att14"/>
+      <Field id="sv1#area1#page6#enu1#fld2" name="Amount" type="integer" modifiable="true"/>
+      <Link id="sv1#area1#page6#enu1#ln9" name="Legg til" to="sv1#area1#miu1" type="normal" validate="true" ajaxEnabled="false">
+        <LinkParameter id="sv1#area1#page6#enu1#ln9#par32" name="Amount_Amount" source="sv1#area1#page6#enu1#fld2" target="sv1#area1#miu1.mov1#opm4#icu5#icp5"/>
+        <LinkParameter id="sv1#area1#page6#enu1#ln9#par33" name="Key [ProductId]_ProductId" source="key.ent4#att14" target="sv1#area1#miu1.mov1#opm4#icu5#icp4"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page6#enu1">
+          <layout:Field field="sv1#area1#page6#enu1#fld2"/>
+          <layout:Link link="sv1#area1#page6#enu1#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

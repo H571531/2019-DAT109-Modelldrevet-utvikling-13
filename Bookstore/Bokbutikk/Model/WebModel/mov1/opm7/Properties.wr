@@ -1,0 +1,19 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="125" gr:y="230" id="mov1#opm7" name="T&#248;m handlevogn">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm7#icu10" name="Input Collector" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm7#icu10#oln41" name="Start" to="mov1#opm7#miu24" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <ModuleInstanceUnit gr:x="310" gr:y="80" id="mov1#opm7#miu24" action="true" name="Hent handlevogn" moduleId="mov1#opm3">
+      <OKLink id="mov1#opm7#miu24#oln42" name="Handlevogn hentet eller opprettet" to="mov1#opm7#dlu1">
+        <LinkParameter id="mov1#opm7#miu24#oln42#par65" name="Cart_RoleCondition6 [CartId]" source="mov1#opm3#okcu4#ocp2" target="mov1#opm7#dlu1#su22#rcond6.ent2#att7"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <DeleteUnit gr:x="650" gr:y="110" id="mov1#opm7#dlu1" name="Fjern alle varer" entity="ent3">
+      <Selector id="mov1#opm7#dlu1#su22" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm7#dlu1#su22#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+      <OKLink id="mov1#opm7#dlu1#oln43" name="Vare fjernet" to="mov1#opm7#okcu11" automaticCoupling="true"/>
+    </DeleteUnit>
+    <OKCollectorUnit gr:x="955" gr:y="95" id="mov1#opm7#okcu11" name="Tilbake"/>
+  </OperationUnits>
+</OperationModule>

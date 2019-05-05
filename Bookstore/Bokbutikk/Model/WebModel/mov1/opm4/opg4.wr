@@ -1,0 +1,18 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4#opg4" name="Legg til i handlevogn" transaction="true" gr:x="565" gr:y="160">
+  <OperationUnits>
+    <SelectorUnit id="mov1#opm4#opg4#seu11" name="Get selected product" gr:x="0" gr:y="0" entity="ent4">
+      <Selector id="mov1#opm4#opg4#seu11#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#opg4#seu11#su7#kcond8" name="Product" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#opg4#seu11#oln25" name="OKFlow10" to="mov1#opm4#opg4#cru5">
+        <LinkParameter id="mov1#opm4#opg4#seu11#oln25#par23" name="ProductId_Product.ProductId(OrderToProduct)" source="ent4#att14Array" target="mov1#opm4#opg4#cru5.rel4#role8.ent4#att14"/>
+        <LinkParameter id="mov1#opm4#opg4#seu11#oln25#par29" name="Price_PrisForEnkeltProdukt" source="ent4#att17Array" target="mov1#opm4#opg4#cru5.ent3#att32"/>
+      </OKLink>
+    </SelectorUnit>
+    <CreateUnit id="mov1#opm4#opg4#cru5" name="Create Cart Product" gr:x="190" gr:y="5" entity="ent3">
+      <OKLink id="mov1#opm4#opg4#cru5#oln26" name="Produkt lagt til i handlevogn" to="mov1#opm4#okcu5">
+        <LinkParameter id="mov1#opm4#opg4#cru5#oln26#par50" name="Lagt til i handlevogn!_ComfirmationMessage" sourceValue="Lagt til i handlevogn!" target="mov1#opm4#okcu5#ocp3"/>
+      </OKLink>
+    </CreateUnit>
+  </OperationUnits>
+</OperationGroup>

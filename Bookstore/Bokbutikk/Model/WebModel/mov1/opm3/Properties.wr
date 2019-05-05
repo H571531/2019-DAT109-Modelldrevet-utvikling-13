@@ -1,0 +1,42 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="410" gr:y="170" id="mov1#opm3" name="Hent handlevogn">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu4" gr:x="30" gr:y="60">
+      <OKLink id="mov1#opm3#icu4#oln5" name="Start" to="mov1#opm3#miu2" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="1020" gr:y="145" id="mov1#opm3#okcu4" name="OK Port4">
+      <OutputCollectorParameter id="mov1#opm3#okcu4#ocp2" name="Cart"/>
+    </OKCollectorUnit>
+    <SelectorUnit gr:x="565" gr:y="70" id="mov1#opm3#seu9" name="Get Cart" entity="ent2">
+      <OKLink id="mov1#opm3#seu9#oln14" name="Send handlevogn" to="mov1#opm3#inn3">
+        <LinkParameter id="mov1#opm3#seu9#oln14#par14" name="CartId_Input" source="ent2#att7Array" target="mov1#opm3#inn3.isnotnull"/>
+      </OKLink>
+      <Selector id="mov1#opm3#seu9#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#opm3#seu9#su1#rcond2" name="BrukerId" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="815" gr:y="75" id="mov1#opm3#inn3" name="Does Cart exist?">
+      <KOLink id="mov1#opm3#inn3#kln3" name="Handlevogn finnes ikke" to="mov1#opm3#tmu2" automaticCoupling="true"/>
+      <OKLink id="mov1#opm3#inn3#oln16" name="Handlevogn finnes allerede" to="mov1#opm3#okcu4">
+        <LinkParameter id="mov1#opm3#inn3#oln16#par17" name="Input Value_Cart" source="inputValue" target="mov1#opm3#okcu4#ocp2"/>
+      </OKLink>
+    </IsNotNullUnit>
+    <TimeUnit gr:x="435" gr:y="315" id="mov1#opm3#tmu2" name="Get current cate">
+      <OKLink id="mov1#opm3#tmu2#oln15" name="Send n&#229;v&#230;rende dato" to="mov1#opm3#cru3">
+        <LinkParameter id="mov1#opm3#tmu2#oln15#par31" name="Current/Input Date_Created" source="currentDate" target="mov1#opm3#cru3.ent2#att8"/>
+      </OKLink>
+    </TimeUnit>
+    <CreateUnit gr:x="635" gr:y="300" id="mov1#opm3#cru3" name="Create new cart" entity="ent2" skipBlankRecords="false">
+      <OKLink id="mov1#opm3#cru3#oln17" name="Ny handlevogn opprettet" to="mov1#opm3#okcu4">
+        <LinkParameter id="mov1#opm3#cru3#oln17#par16" name="CartId_Cart" source="ent2#att7Array" target="mov1#opm3#okcu4#ocp2"/>
+      </OKLink>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="275" gr:y="80" id="mov1#opm3#miu2" action="true" name="Hent bruker" moduleId="mov1#opm2" linkOrder="mov1#opm3#miu2#ln6">
+      <OKLink id="mov1#opm3#miu2#oln6" name="Send brukerId til handlevogn" to="mov1#opm3#seu9">
+        <LinkParameter id="mov1#opm3#miu2#oln6#par11" name="Customer_BrukerId [CustomerId]" source="mov1#opm2#okcu2#ocp4" target="mov1#opm3#seu9#su1#rcond2.ent1#att1"/>
+      </OKLink>
+      <Link id="mov1#opm3#miu2#ln6" name="Send brukerId til ny handlevogn" to="mov1#opm3#cru3" type="transport" validate="true">
+        <LinkParameter id="mov1#opm3#miu2#ln6#par12" name="Customer_Customer.CustomerId(Shopping CartToCustomer)" source="mov1#opm2#okcu2#ocp4" target="mov1#opm3#cru3.rel1#role2.ent1#att1"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

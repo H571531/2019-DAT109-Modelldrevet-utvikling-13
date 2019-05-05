@@ -1,0 +1,26 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="100" gr:y="60" id="sv1#area1" name="Voting" landmark="true" defaultPage="sv1#area1#page2">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="0" gr:y="525" id="sv1#area1#miu1" action="true" name="Vote" moduleId="mov1#opm1">
+      <OKLink id="sv1#area1#miu1#oln7" name="Stemme registrert" to="sv1#area1#page1#mssu1">
+        <LinkParameter id="sv1#area1#miu1#oln7#par12" name="Confirmation message_Shown Messages" source="mov1#opm1#okcu1#ocp2" target="sv1#area1#page1#mssu1.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#area1#miu1#kln3" name="Allerede stemt" to="sv1#area1#page1#mssu1" gr:bendpoints="94,-42,-36,183;139,-103,9,122" codeRef="mov1#opm1#kocu1">
+        <LinkParameter id="sv1#area1#miu1#kln3#par11" name="Already voted-message_Shown Messages" source="mov1#opm1#kocu1#ocp1" target="sv1#area1#page1#mssu1.shownMessages"/>
+      </KOLink>
+      <KOLink id="sv1#area1#miu1#kln2" name="Avstemming avsluttet" to="sv1#area1#page1#mssu1" gr:bendpoints="174,-15,44,210" codeRef="mov1#opm1#kocu3">
+        <LinkParameter id="sv1#area1#miu1#kln2#par7" name="Voting closed-message_Shown Messages" source="mov1#opm1#kocu3#ocp3" target="sv1#area1#page1#mssu1.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="230" gr:y="115" id="sv1#area1#miu3" moduleId="mov1#opm2" action="true" name="Sjekk om innlogget">
+      <KOLink id="sv1#area1#miu3#kln5" name="Ikke innlogget" to="sv1#area1#page4" automaticCoupling="true"/>
+      <OKLink id="sv1#area1#miu3#oln35" name="Allerede innlogget" to="sv1#area1#page1#dau1">
+        <LinkParameter id="sv1#area1#miu3#oln35#par57" name="Valg Stand_KeyCondition1 [standid]" source="mov1#opm2#okcu3#ocp8" target="sv1#area1#page1#dau1#su1#kcond1.ent2#att2"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="515" gr:y="335" id="sv1#area1#miu8" action="true" moduleId="mov1#opm4">
+      <OKLink id="sv1#area1#miu8#oln36" name="Ny Visitor registrert" to="sv1#area1#page1#dau1" gr:bendpoints="-300,-138,240,-103">
+        <LinkParameter id="sv1#area1#miu8#oln36#par59" name="Valgt Stand_KeyCondition1 [standid]" source="mov1#opm4#okcu4#ocp9" target="sv1#area1#page1#dau1#su1#kcond1.ent2#att2"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

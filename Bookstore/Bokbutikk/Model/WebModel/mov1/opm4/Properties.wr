@@ -1,0 +1,24 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov1#opm4" name="Legg til i handlevogn" gr:x="125" gr:y="95">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu5" gr:x="35" gr:y="110" linkOrder="mov1#opm4#icu5#ln35">
+      <InputCollectorParameter id="mov1#opm4#icu5#icp4" name="ProductId"/>
+      <InputCollectorParameter id="mov1#opm4#icu5#icp5" name="Amount"/>
+      <Link id="mov1#opm4#icu5#ln28" name="Send vareId" to="mov1#opm4#opg4#seu11" type="transport" validate="true" gr:bendpoints="353,-25,-202,-145">
+        <LinkParameter id="mov1#opm4#icu5#ln28#par18" name="ProductId_Product [ProductId]" source="mov1#opm4#icu5#icp4" target="mov1#opm4#opg4#seu11#su7#kcond8.ent4#att14"/>
+      </Link>
+      <OKLink id="mov1#opm4#icu5#oln20" name="Hent eller opprett ny handlevogn" to="mov1#opm4#miu8" automaticCoupling="true"/>
+      <Link id="mov1#opm4#icu5#ln35" name="Send antall til handlevogn" to="mov1#opm4#opg4#cru5" type="transport" validate="true" gr:bendpoints="417,-92,-273,-182">
+        <LinkParameter id="mov1#opm4#icu5#ln35#par35" name="Amount_ProductQuantity" source="mov1#opm4#icu5#icp5" target="mov1#opm4#opg4#cru5.ent3#att13"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit id="mov1#opm4#okcu5" name="OK Port1" gr:x="1015" gr:y="190">
+      <OutputCollectorParameter id="mov1#opm4#okcu5#ocp3" name="ComfirmationMessage" value="Lagt til i handlevognen!"/>
+    </OKCollectorUnit>
+    <ModuleInstanceUnit id="mov1#opm4#miu8" gr:x="245" gr:y="245" moduleId="mov1#opm3" action="true" linkOrder="mov1#opm4#miu8#ln34">
+      <OKLink id="mov1#opm4#miu8#oln27" name="Handlevogn hentet" to="mov1#opm4#opg4#seu11" automaticCoupling="true"/>
+      <Link id="mov1#opm4#miu8#ln34" name="Send handlevognId" to="mov1#opm4#opg4#cru5" type="transport" validate="true" gr:bendpoints="294,50,-196,90">
+        <LinkParameter id="mov1#opm4#miu8#ln34#par30" name="Cart_ShoppingCart.CartId(OrderToShopping Cart)" source="mov1#opm3#okcu4#ocp2" target="mov1#opm4#opg4#cru5.rel3#role6.ent2#att7"/>
+      </Link>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</OperationModule>

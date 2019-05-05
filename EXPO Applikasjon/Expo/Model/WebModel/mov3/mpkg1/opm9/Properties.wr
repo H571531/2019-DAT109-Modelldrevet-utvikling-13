@@ -1,0 +1,27 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="0" id="mov3#mpkg1#opm9" name="Oppdater Stand">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#mpkg1#opm9#icu10" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#mpkg1#opm9#icu10#icp9" name="StandId"/>
+      <OKLink id="mov3#mpkg1#opm9#icu10#oln31" name="Start" to="mov3#mpkg1#opm9#mfu3">
+        <LinkParameter id="mov3#mpkg1#opm9#icu10#oln31#par66" name="Stand forfattere_authors" source="mov3#mpkg1#opm9#icu10#icp14" target="mov3#mpkg1#opm9#mfu3.ent2#att6"/>
+        <LinkParameter id="mov3#mpkg1#opm9#icu10#oln31#par67" name="StandId_KeyCondition9 [standid]" source="mov3#mpkg1#opm9#icu10#icp9" target="mov3#mpkg1#opm9#mfu3#su10#kcond10.ent2#att2"/>
+        <LinkParameter id="mov3#mpkg1#opm9#icu10#oln31#par73" name="Stand poster_poster" source="mov3#mpkg1#opm9#icu10#icp15" target="mov3#mpkg1#opm9#mfu3.ent2#att19"/>
+        <LinkParameter id="mov3#mpkg1#opm9#icu10#oln31#par75" name="Stand navn_standName" source="mov3#mpkg1#opm9#icu10#icp13" target="mov3#mpkg1#opm9#mfu3.ent2#att3"/>
+        <LinkParameter id="mov3#mpkg1#opm9#icu10#oln31#par79" name="Studie_Study.studyId(StandToStudy)" source="mov3#mpkg1#opm9#icu10#icp16" target="mov3#mpkg1#opm9#mfu3.rel2#role3.ent3#att8"/>
+      </OKLink>
+      <InputCollectorParameter id="mov3#mpkg1#opm9#icu10#icp13" name="Stand navn"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm9#icu10#icp14" name="Stand forfattere"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm9#icu10#icp15" name="Stand poster"/>
+      <InputCollectorParameter id="mov3#mpkg1#opm9#icu10#icp16" name="Studie"/>
+    </InputCollectorUnit>
+    <ModifyUnit gr:x="285" gr:y="110" id="mov3#mpkg1#opm9#mfu3" name="Oppdater Stand" entity="ent2">
+      <Selector id="mov3#mpkg1#opm9#mfu3#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#mpkg1#opm9#mfu3#su10#kcond10" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov3#mpkg1#opm9#mfu3#oln32" name="OKFlow30" to="mov3#mpkg1#opm9#okcu8" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="435" gr:y="110" id="mov3#mpkg1#opm9#okcu8" name="Oppdatering OK">
+      <OutputCollectorParameter id="mov3#mpkg1#opm9#okcu8#ocp5" name="Confirmation message" value="Stand oppdatert!"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

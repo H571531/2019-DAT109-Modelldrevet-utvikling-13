@@ -1,0 +1,28 @@
+<HybridModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="165" gr:y="435" id="mov1#hym2" name="Statistikk">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="155" gr:y="155" id="mov1#hym2#icu13">
+      <OKLink id="mov1#hym2#icu13#oln18" name="Start" to="mov1#hym2#seu15" automaticCoupling="true"/>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="595" gr:y="175" id="mov1#hym2#seu6" name="Hent aktiv Expo" entity="ent1">
+      <Selector id="mov1#hym2#seu6#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym2#seu6#su11#kcond11" name="Aktiv expoId" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#hym2#seu6#oln49" name="Aktiv Expo" to="mov1#hym2#scu4">
+        <LinkParameter id="mov1#hym2#seu6#oln49#par71" name="statisticsOpenToPublic_open" source="ent1#att5Array" target="mov1#hym2#scu4.open"/>
+      </OKLink>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="975" gr:y="500" id="mov1#hym2#okcu10" name="Tilbake"/>
+    <KOCollectorUnit gr:x="1005" gr:y="235" id="mov1#hym2#kocu4" name="Statistikk ikke &#229;pent">
+      <OutputCollectorParameter id="mov1#hym2#kocu4#ocp10" name="Beskjed om ikke tilgjengelig" value="Dessverre er ikke statistikk tilgjengelig enda! Vennligst kom tilbake senere!"/>
+    </KOCollectorUnit>
+    <ScriptUnit gr:x="785" gr:y="210" id="mov1#hym2#scu4" name="statisticsOpenToPublic?" script="WEB-INF/descr/groovy/statisticsOpen.groovy">
+      <OKLink id="mov1#hym2#scu4#oln50" name="Statistikk er &#229;pent tilgjengelig" to="mov1#hym2#page12#pwu2" automaticCoupling="true"/>
+      <KOLink id="mov1#hym2#scu4#kln13" name="Statistikk er ikke tilgjengelig enda" to="mov1#hym2#kocu4" automaticCoupling="true"/>
+    </ScriptUnit>
+    <SelectorUnit gr:x="430" gr:y="180" id="mov1#hym2#seu15" name="Hent aktiv expo" entity="ent8">
+      <OKLink id="mov1#hym2#seu15#oln19" name="Aktiv ExpoId" to="mov1#hym2#seu6">
+        <LinkParameter id="mov1#hym2#seu15#oln19#par82" name="aktivExpoId_Aktiv expoId [expoid]" source="ent8#att24Array" target="mov1#hym2#seu6#su11#kcond11.ent1#att1"/>
+      </OKLink>
+    </SelectorUnit>
+  </OperationUnits>
+</HybridModule>

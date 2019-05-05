@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="330" gr:y="625" id="sv2#area3#page13" name="QR-kode" layout:cellLayout="WRDefault/Frame">
+  <ContentUnits>
+    <SelectorUnit gr:x="0" gr:y="0" id="sv2#area3#page13#seu19" name="Hent stand" entity="ent2">
+      <Selector id="sv2#area3#page13#seu19#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area3#page13#seu19#su13#kcond13" name="standId" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area3#page13#seu19#ln19" name="Send stand-id til QR-kode-script" to="sv2#area3#page13#scu7" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page13#seu19#ln19#par34" name="standid_standId" source="ent2#att2Array" target="sv2#area3#page13#scu7.standId"/>
+      </Link>
+    </SelectorUnit>
+    <ScriptUnit gr:x="95" gr:y="170" id="sv2#area3#page13#scu7" name="Opprett QR-kode" script="WEB-INF/descr/groovy/opprettQRBilde.groovy">
+      <Link id="sv2#area3#page13#scu7#ln21" name="Send URL til QR-bilde til QR-message" to="sv2#area3#page13#mssu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page13#scu7#ln21#par35" name="Result_qrbilde" source="result" target="sv2#area3#page13#mssu5.sv2#area3#page13#mssu5#ph2"/>
+      </Link>
+      <Comment xml:space="preserve">Oppretter en ny QR-kode, lagres i /Expo/img/standQR/[STANDID].jpg</Comment>
+    </ScriptUnit>
+    <MultiMessageUnit gr:x="265" gr:y="200" id="sv2#area3#page13#mssu5" name="QR-Kode">
+      <Message xml:space="preserve">&lt;img src="$$qrbilde$$" style="width:30em"&gt;</Message>
+      <Placeholder id="sv2#area3#page13#mssu5#ph2" name="qrbilde"/>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page13#scu7" layout:unitVisibilityCondition="cexpr3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page13#mssu5">
+          <layout:LayoutParameter name="contentType" value="text/html" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

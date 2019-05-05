@@ -1,0 +1,53 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="225" gr:y="580" id="mov1#opm3" name="Hent URL til standPoster">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm3#icu3" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov1#opm3#icu3#icp8" name="StandID"/>
+      <OKLink id="mov1#opm3#icu3#oln3" name="Start" to="mov1#opm3#scu3">
+        <LinkParameter id="mov1#opm3#icu3#oln3#par26" name="StandID_standId" source="mov1#opm3#icu3#icp8" target="mov1#opm3#scu3.standId"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <ScriptUnit gr:x="340" gr:y="90" id="mov1#opm3#scu3" name="Hent URL">
+      <ScriptUnitText xml:space="preserve">#input String standId
+ 
+ 
+ 
+import com.webratio.rtx.RTXConstants
+ 
+import com.webratio.struts.WRGlobals;
+ 
+import com.webratio.struts.HttpRequestHelper
+ 
+import com.webratio.rtx.core.BeanHelper
+ 
+ 
+ 
+/*gets the request from the localContext*/
+ 
+def request = localContext.get(RTXConstants.HTTP_SERVLET_REQUEST_KEY)
+ 
+ 
+ 
+/*gets the session from the request*/
+ 
+def session = request.getSession().getServletContext();
+ 
+def requestHelper = (HttpRequestHelper) session.getAttribute(WRGlobals.HTTP_REQUEST_HELPER_KEY);
+ 
+ 
+ 
+/*gets the URL of the application*/
+ 
+def url = requestHelper.getAbsoluteURLContext(false, request)
+ 
+def bildeURL = url + "/img/standPosters/poster_2019_" + standId + ".png"
+
+return bildeURL</ScriptUnitText>
+      <OKLink id="mov1#opm3#scu3#oln11" name="URL hentet" to="mov1#opm3#okcu2">
+        <LinkParameter id="mov1#opm3#scu3#oln11#par28" name="Result_URL" source="result" target="mov1#opm3#okcu2#ocp4"/>
+      </OKLink>
+    </ScriptUnit>
+    <OKCollectorUnit gr:x="485" gr:y="75" id="mov1#opm3#okcu2" name="Ut">
+      <OutputCollectorParameter id="mov1#opm3#okcu2#ocp4" name="URL"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

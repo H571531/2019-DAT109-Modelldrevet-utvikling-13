@@ -1,0 +1,26 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="180" gr:y="160" id="mov3#opm6" name="Registrer ny admin">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#opm6#icu7" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#opm6#icu7#icp5" name="Nytt brukernavn"/>
+      <InputCollectorParameter id="mov3#opm6#icu7#icp6" name="Nytt passord"/>
+      <OKLink id="mov3#opm6#icu7#oln21" name="OKFlow21" to="mov3#opm6#cru4">
+        <LinkParameter id="mov3#opm6#icu7#oln21#par30" name="Nytt passord_password" source="mov3#opm6#icu7#icp6" target="mov3#opm6#cru4.password"/>
+        <LinkParameter id="mov3#opm6#icu7#oln21#par31" name="Nytt brukernavn_userName" source="mov3#opm6#icu7#icp5" target="mov3#opm6#cru4.userName"/>
+        <LinkParameter id="mov3#opm6#icu7#oln21#par39" name="1_Group.oid(defaultGroup)" sourceValue="1" target="mov3#opm6#cru4.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov3#opm6#icu7#oln21#par40" name="1_Group.oid(groups)" sourceValue="1" target="mov3#opm6#cru4.User2Group.groupOID"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="315" gr:y="100" id="mov3#opm6#cru4" name="Opprett ny admin" entity="User">
+      <OKLink id="mov3#opm6#cru4#oln30" name="OKFlow30" to="mov3#opm6#lgu2">
+        <LinkParameter id="mov3#opm6#cru4#oln30#par63" name="userName_Username" source="userNameArray" target="mov3#opm6#lgu2.username"/>
+        <LinkParameter id="mov3#opm6#cru4#oln30#par64" name="password_Password" source="passwordArray" target="mov3#opm6#lgu2.password"/>
+      </OKLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="570" gr:y="75" id="mov3#opm6#okcu5" name="Registrering OK">
+      <OutputCollectorParameter id="mov3#opm6#okcu5#ocp12" name="Bekreftelsemelding" value="Ny administrator registrert!"/>
+    </OKCollectorUnit>
+    <LoginUnit gr:x="490" gr:y="170" id="mov3#opm6#lgu2" name="Login2">
+      <OKLink id="mov3#opm6#lgu2#oln42" name="OKFlow42" to="mov3#opm6#okcu5" automaticCoupling="true"/>
+    </LoginUnit>
+  </OperationUnits>
+</OperationModule>

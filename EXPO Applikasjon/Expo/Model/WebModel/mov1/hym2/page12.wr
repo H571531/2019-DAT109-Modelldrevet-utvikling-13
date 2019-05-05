@@ -1,0 +1,33 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="730" gr:y="430" id="mov1#hym2#page12" name="Statistikk">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="50" gr:y="20" id="mov1#hym2#page12#pwu2" name="Top 5 Stands" sortable="false" checkable="false" useCountQuery="false" entity="ent2" displayAttributes="ent2#att2 ent2#att3 ent2#att6 ent2#att18" maxResults="5" linkOrder="mov1#hym2#page12#pwu2#ln44">
+      <Link id="mov1#hym2#page12#pwu2#ln44" name="Tilbake" to="mov1#hym2#okcu10" automaticCoupling="true" type="normal" validate="true"/>
+      <SortAttribute attribute="ent2#att18" order="descending"/>
+      <SortAttribute attribute="ent2#att3" order="descending"/>
+    </PowerIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym2#page12#pwu2">
+          <layout:Attribute attribute="ent2#att2"/>
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="ent2#att18"/>
+          <layout:Link link="mov1#hym2#page12#pwu2#ln44"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

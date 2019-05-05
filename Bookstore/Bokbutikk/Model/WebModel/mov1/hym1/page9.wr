@@ -1,0 +1,173 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="465" gr:y="185" id="mov1#hym1#page9" name="Handlevogn" ajaxEnabled="true" ignoreMasterPage="false" layout:pageLayout="WebRatio/Basic" linkOrder="mov1#hym1#page9#ln67">
+  <ContentUnits>
+    <DataUnit gr:x="280" gr:y="125" id="mov1#hym1#page9#dau5" name="Handlevogn" entity="ent2" displayAttributes="ent2#att8 ent2#att29">
+      <Selector id="mov1#hym1#page9#dau5#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym1#page9#dau5#su8#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <DataUnit gr:x="185" gr:y="255" id="mov1#hym1#page9#dau6" name="Totalpris" entity="ent2" displayAttributes="ent2#att9">
+      <Selector id="mov1#hym1#page9#dau6#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#hym1#page9#dau6#su9#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <ModuleInstanceUnit id="mov1#hym1#page9#miu18" name="Hent handlevogn" gr:x="15" gr:y="85" action="true" moduleId="mov1#opm3">
+      <Link id="mov1#hym1#page9#miu18#ln50" name="Send handlevognId" to="mov1#hym1#page9#dau5" type="transport" validate="true">
+        <LinkParameter id="mov1#hym1#page9#miu18#ln50#par46" name="Cart_KeyCondition9 [CartId]" source="mov1#opm3#okcu4#ocp2" target="mov1#hym1#page9#dau5#su8#kcond9.ent2#att7"/>
+      </Link>
+      <Link id="mov1#hym1#page9#miu18#ln51" name="Send handlevognId" to="mov1#hym1#page9#dau6" type="transport" validate="true">
+        <LinkParameter id="mov1#hym1#page9#miu18#ln51#par47" name="Cart_KeyCondition10 [CartId]" source="mov1#opm3#okcu4#ocp2" target="mov1#hym1#page9#dau6#su9#kcond10.ent2#att7"/>
+      </Link>
+      <Link id="mov1#hym1#page9#miu18#ln64" name="Send handlevognId" to="mov1#hym1#page9#seu12" type="transport" validate="true">
+        <LinkParameter id="mov1#hym1#page9#miu18#ln64#par56" name="Cart_Produkter i handlevogn [CartId]" source="mov1#opm3#okcu4#ocp2" target="mov1#hym1#page9#seu12#su20#rcond5.ent2#att7"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <MultiEntryUnit gr:x="40" gr:y="410" id="mov1#hym1#page9#meu1" name="Varer i handlevogn" minLength="1" linkOrder="mov1#hym1#page9#meu1#ln62" entity="ent3" fieldOrder="mov1#hym1#page9#meu1#fld22 mov1#hym1#page9#meu1#fld25 mov1#hym1#page9#meu1#fld24 mov1#hym1#page9#meu1#fld21 mov1#hym1#page9#meu1#fld23">
+      <Link id="mov1#hym1#page9#meu1#ln62" name="Send oppdatert vare til handlevogn" to="mov1#hym1#miu23" type="normal" validate="true">
+        <LinkParameter id="mov1#hym1#page9#meu1#ln62#par63" name="ProductQuantity_Nytt antall" source="mov1#hym1#page9#meu1#fld21" target="mov1#hym1#miu23.mov1#opm6#icu9#icp7"/>
+        <LinkParameter id="mov1#hym1#page9#meu1#ln62#par64" name="Key [OrderLineId]_Vare" source="ent3#att33Checked" target="mov1#hym1#miu23.mov1#opm6#icu9#icp6"/>
+      </Link>
+      <Field id="mov1#hym1#page9#meu1#fld21" name="ProductQuantity" type="integer" modifiable="true" attribute="ent3#att13" preloaded="true"/>
+      <Field id="mov1#hym1#page9#meu1#fld22" name="ProductId" type="integer" modifiable="false" preloaded="true" attribute="ent3#att33"/>
+      <Field id="mov1#hym1#page9#meu1#fld23" name="Total" type="float" modifiable="false" preloaded="true"/>
+      <Field id="mov1#hym1#page9#meu1#fld24" name="PrisForEnkeltProdukt" type="float" modifiable="false" attribute="ent3#att32" preloaded="true"/>
+      <Field id="mov1#hym1#page9#meu1#fld25" name="ProductName" type="string" modifiable="false" preloaded="true"/>
+      <Comment xml:space="preserve">Skulle helst hatt alle opplysninger unntatt antall som vanlig tekst som ikke ser ut som kan endres.
+En bruker m&#229; n&#229; ogs&#229; hake av checkbox foran rad som skal oppdateres, som ikke er s&#230;rlig brukervennlig.</Comment>
+    </MultiEntryUnit>
+    <SelectorUnit gr:x="0" gr:y="215" id="mov1#hym1#page9#seu12" name="Finn produkter" entity="ent3" distinctAttributes="ent3#att13 ent3#att27 ent3#att28 ent3#att30 ent3#att32 ent3#att33 ent3#att34">
+      <Selector id="mov1#hym1#page9#seu12#su20" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov1#hym1#page9#seu12#su20#rcond5" name="Produkter i handlevogn" predicate="in" implied="false" role="rel3#role5"/>
+      </Selector>
+      <Link id="mov1#hym1#page9#seu12#ln65" name="Flow65" to="mov1#hym1#page9#meu1" type="transport" validate="true">
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par55" name="OrderLineId_Key Condition [OrderLineId]" source="ent3#att33Array" target="mov1#hym1#page9#meu1.ent3#att33"/>
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par58" name="ProductName_ProductName" source="ent3#att34Array" target="mov1#hym1#page9#meu1#fld25_slot"/>
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par59" name="PrisForEnkeltProdukt_PrisForEnkeltProdukt" source="ent3#att32Array" target="mov1#hym1#page9#meu1#fld24_slot"/>
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par60" name="ProductId_ProductId" source="ent3#att28Array" target="mov1#hym1#page9#meu1#fld22_slot"/>
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par61" name="ProductQuantity_ProductQuantity" source="ent3#att13Array" target="mov1#hym1#page9#meu1#fld21_slot"/>
+        <LinkParameter id="mov1#hym1#page9#seu12#ln65#par62" name="Total_Total" source="ent3#att30Array" target="mov1#hym1#page9#meu1#fld23_slot"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="320" gr:y="0" id="mov1#hym1#page9#mssu5" name="Bekreftelse"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page9#dau5">
+          <layout:Attribute attribute="ent2#att8"/>
+          <layout:Attribute attribute="ent2#att29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page9#meu1">
+          <layout:Link link="mov1#hym1#page9#meu1#ln62"/>
+          <layout:Field field="mov1#hym1#page9#meu1#fld22"/>
+          <layout:Field field="mov1#hym1#page9#meu1#fld25"/>
+          <layout:Field field="mov1#hym1#page9#meu1#fld24"/>
+          <layout:Field field="mov1#hym1#page9#meu1#fld21"/>
+          <layout:Field field="mov1#hym1#page9#meu1#fld23"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page9#dau6">
+          <layout:Attribute attribute="ent2#att9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="mov1#hym1#page9#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="mov1#hym1#page9#ln67" name="T&#248;m handlevogn" to="mov1#hym1#miu25" automaticCoupling="true" type="normal" validate="true"/>
+</Page>

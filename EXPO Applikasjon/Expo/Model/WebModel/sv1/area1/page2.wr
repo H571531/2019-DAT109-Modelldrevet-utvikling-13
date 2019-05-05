@@ -1,0 +1,44 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="10" gr:y="0" id="sv1#area1#page2" name="Alle stands">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv1#area1#page2#inu1" name="Stands" entity="ent2" displayAttributes="ent2#att3" linkOrder="sv1#area1#page2#inu1#ln13">
+      <Link id="sv1#area1#page2#inu1#ln13" name="Stem p&#229; stand!" to="sv1#area1#miu3" type="normal" validate="true">
+        <LinkParameter id="sv1#area1#page2#inu1#ln13#par22" name="standid_StandId" source="data[].ent2#att2" target="sv1#area1#miu3.mov1#opm2#icu2#icp3"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#area1#page2#inu1">
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Link link="sv1#area1#page2#inu1#ln13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

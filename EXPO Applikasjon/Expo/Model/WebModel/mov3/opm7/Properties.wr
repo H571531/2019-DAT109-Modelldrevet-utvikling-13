@@ -1,0 +1,23 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="135" gr:y="325" id="mov3#opm7" name="Oppdater Expo">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#opm7#icu8" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#opm7#icu8#icp7" name="ExpoId"/>
+      <OKLink id="mov3#opm7#icu8#oln24" name="Start" to="mov3#opm7#mfu1">
+        <LinkParameter id="mov3#opm7#icu8#oln24#par51" name="ExpoId_KeyCondition7 [expoid]" source="mov3#opm7#icu8#icp7" target="mov3#opm7#mfu1#su7#kcond7.ent1#att1"/>
+        <LinkParameter id="mov3#opm7#icu8#oln24#par52" name="Statistikk &#229;pent_statisticsOpenToPublic" source="mov3#opm7#icu8#icp11" target="mov3#opm7#mfu1.ent1#att5"/>
+        <LinkParameter id="mov3#opm7#icu8#oln24#par65" name="Avstemming_voteregistrationopen" source="mov3#opm7#icu8#icp12" target="mov3#opm7#mfu1.ent1#att4"/>
+      </OKLink>
+      <InputCollectorParameter id="mov3#opm7#icu8#icp11" name="Statistikk &#229;pent"/>
+      <InputCollectorParameter id="mov3#opm7#icu8#icp12" name="Avstemming"/>
+    </InputCollectorUnit>
+    <ModifyUnit gr:x="330" gr:y="100" id="mov3#opm7#mfu1" name="Oppdater Expo" entity="ent1">
+      <Selector id="mov3#opm7#mfu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov3#opm7#mfu1#su7#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov3#opm7#mfu1#oln25" name="OKFlow25" to="mov3#opm7#okcu6" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="545" gr:y="75" id="mov3#opm7#okcu6" name="Oppdatering OK">
+      <OutputCollectorParameter id="mov3#opm7#okcu6#ocp11" name="Bekreftelsemelding" value="Expo er oppdatert!"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

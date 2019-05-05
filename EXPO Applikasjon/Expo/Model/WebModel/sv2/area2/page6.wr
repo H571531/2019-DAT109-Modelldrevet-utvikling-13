@@ -1,0 +1,137 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area2#page6" name="Administrering av expo" protected="false" linkOrder="sv2#area2#page6#ln26 sv2#area2#page6#ln40 sv2#area2#page6#ln41 sv2#area2#page6#ln46" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="160" gr:y="115" id="sv2#area2#page6#enu4" name="Legg til ny admin" entity="User" linkOrder="sv2#area2#page6#enu4#ln20">
+      <Field id="sv2#area2#page6#enu4#fld5" name="Brukernavn:" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv2#area2#page6#enu4#fld6" name="Passord: " type="password" modifiable="true" attribute="password"/>
+      <Link id="sv2#area2#page6#enu4#ln20" name="Registrer" to="sv2#miu9" type="normal" validate="true">
+        <LinkParameter id="sv2#area2#page6#enu4#ln20#par32" name="Brukernavn:_Nytt brukernavn" source="sv2#area2#page6#enu4#fld5" target="sv2#miu9.mov3#opm6#icu7#icp5"/>
+        <LinkParameter id="sv2#area2#page6#enu4#ln20#par33" name="Passord: _Nytt passord" source="sv2#area2#page6#enu4#fld6" target="sv2#miu9.mov3#opm6#icu7#icp6"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="200" gr:y="10" id="sv2#area2#page6#mssu2" name="Aktiv expo"/>
+    <EntryUnit gr:x="155" gr:y="360" id="sv2#area2#page6#enu5" name="&#197;pne/Lukke" entity="ent1" linkOrder="sv2#area2#page6#enu5#ln24">
+      <SelectionField id="sv2#area2#page6#enu5#sfld1" name="Registrering av nye stemmer: " type="boolean" attribute="ent1#att4"/>
+      <SelectionField id="sv2#area2#page6#enu5#sfld2" name="Statistikk &#229;pen for publikum: " type="boolean" attribute="ent1#att5"/>
+      <Link id="sv2#area2#page6#enu5#ln24" name="Oppdater" to="sv2#miu10" type="normal" validate="true">
+        <LinkParameter id="sv2#area2#page6#enu5#ln24#par41" name="Expo Object_Expo" source="key.ent1#att1" target="sv2#miu10.mov3#opm7#icu8#icp7"/>
+        <LinkParameter id="sv2#area2#page6#enu5#ln24#par43" name="Registrering av nye stemmer: _Avstemming" source="sv2#area2#page6#enu5#sfld1" target="sv2#miu10.mov3#opm7#icu8#icp12"/>
+        <LinkParameter id="sv2#area2#page6#enu5#ln24#par44" name="Statistikk &#229;pen for publikum: _Statistikk &#229;pent" source="sv2#area2#page6#enu5#sfld2" target="sv2#miu10.mov3#opm7#icu8#icp11"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="140" id="sv2#area2#page6#seu5" name="Hent aktiv expo" entity="ent1">
+      <Selector id="sv2#area2#page6#seu5#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area2#page6#seu5#su6#kcond9" name="aktivExpoId" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area2#page6#seu5#ln23" name="Aktiv expo" to="sv2#area2#page6#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par36" name="expoid_Key Condition [expoid]" source="ent1#att1Array" target="sv2#area2#page6#enu5.ent1#att1"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par37" name="voteregistrationopen_Selection Field1 - Preselection" source="ent1#att4Array" target="sv2#area2#page6#enu5#sfld1_presel"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par38" name="statisticsOpenToPublic_Statistikk &#229;pen for publikum:  - Preselection" source="ent1#att5Array" target="sv2#area2#page6#enu5#sfld2_presel"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par4" name="voteregistrationopen_Registrering av nye stemmer:  [output]" source="ent1#att4Array" target="sv2#area2#page6#enu5#sfld1_output"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par5" name="statisticsOpenToPublic_Statistikk &#229;pen for publikum:  [output]" source="ent1#att5Array" target="sv2#area2#page6#enu5#sfld2_output"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par20" name="voteregistrationopen_Registrering av nye stemmer:  [label]" source="ent1#att4Array" target="sv2#area2#page6#enu5#sfld1_label"/>
+        <LinkParameter id="sv2#area2#page6#seu5#ln23#par21" name="statisticsOpenToPublic_Statistikk &#229;pen for publikum:  [label]" source="ent1#att5Array" target="sv2#area2#page6#enu5#sfld2_label"/>
+      </Link>
+      <Link id="sv2#area2#page6#seu5#ln3" name="ExpoId" to="sv2#area2#page6#mssu2" type="transport" validate="true">
+        <LinkParameter id="sv2#area2#page6#seu5#ln3#par3" name="expoid_Shown Messages" source="ent1#att1Array" target="sv2#area2#page6#mssu2.shownMessages"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="10" gr:y="0" id="sv2#area2#page6#seu12" name="Hent aktivExpoId" entity="ent8">
+      <Link id="sv2#area2#page6#seu12#ln33" name="Aktiv ExpoId" to="sv2#area2#page6#seu5" type="transport" validate="true">
+        <LinkParameter id="sv2#area2#page6#seu12#ln33#par61" name="aktivExpoId_aktivExpoId [expoid]" source="ent8#att24Array" target="sv2#area2#page6#seu5#su6#kcond9.ent1#att1"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit gr:x="165" gr:y="250" id="sv2#area2#page6#mssu7" name="Bekreftelse"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area2#page6#mssu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area2#page6#enu4">
+          <layout:Field field="sv2#area2#page6#enu4#fld5"/>
+          <layout:Field field="sv2#area2#page6#enu4#fld6"/>
+          <layout:Link link="sv2#area2#page6#enu4#ln20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area2#page6#enu5">
+          <layout:Field field="sv2#area2#page6#enu5#sfld1"/>
+          <layout:Field field="sv2#area2#page6#enu5#sfld2"/>
+          <layout:Link link="sv2#area2#page6#enu5#ln24"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area2#page6#mssu7"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area2#page6#ln26" name="Browse alle stands" to="sv2#area3" automaticCoupling="true" type="normal" validate="true" gr:bendpoints="350,-56,-360,-101"/>
+  <Link id="sv2#area2#page6#ln40" name="Opprett ny stand" to="sv2#area3#page9#enu8" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv2#area2#page6#ln41" name="Se statistikk" to="sv2#area4#page10" automaticCoupling="true" type="normal" validate="true"/>
+  <Link id="sv2#area2#page6#ln46" name="Logg ut" to="sv2#lou1" automaticCoupling="true" type="normal" validate="true"/>
+</Page>

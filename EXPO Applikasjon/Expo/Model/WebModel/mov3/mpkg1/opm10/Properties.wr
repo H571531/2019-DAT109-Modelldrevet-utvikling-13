@@ -1,0 +1,19 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="40" gr:y="55" id="mov3#mpkg1#opm10" name="Registrer ny stand">
+  <OperationUnits>
+    <InputCollectorUnit id="mov3#mpkg1#opm10#icu11" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov3#mpkg1#opm10#icu11#icp10" name="Ny Stand"/>
+      <OKLink id="mov3#mpkg1#opm10#icu11#oln13" name="OKFlow13" to="mov3#mpkg1#opm10#cru5">
+        <LinkParameter id="mov3#mpkg1#opm10#icu11#oln13#par29" name="Ny Stand_Stand Object" source="mov3#mpkg1#opm10#icu11#icp10" target="mov3#mpkg1#opm10#cru5.entityBeans"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="445" gr:y="120" id="mov3#mpkg1#opm10#cru5" name="Opprett ny Stand" entity="ent2">
+      <OKLink id="mov3#mpkg1#opm10#cru5#oln33" name="OKFlow33" to="mov3#mpkg1#opm10#okcu9">
+        <LinkParameter id="mov3#mpkg1#opm10#cru5#oln33#par53" name="standid_StandId" source="ent2#att2Array" target="mov3#mpkg1#opm10#okcu9#ocp7"/>
+      </OKLink>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="835" gr:y="150" id="mov3#mpkg1#opm10#okcu9" name="Registrering OK">
+      <OutputCollectorParameter id="mov3#mpkg1#opm10#okcu9#ocp6" name="Bekreftelse" value="Stand opprettet!"/>
+      <OutputCollectorParameter id="mov3#mpkg1#opm10#okcu9#ocp7" name="StandId"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

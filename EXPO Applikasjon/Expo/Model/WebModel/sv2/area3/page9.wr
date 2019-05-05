@@ -1,0 +1,65 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="365" id="sv2#area3#page9" name="Opprett ny stand">
+  <ContentUnits>
+    <EntryUnit gr:x="10" gr:y="0" id="sv2#area3#page9#enu8" name="Ny Stand" entity="ent2" linkOrder="sv2#area3#page9#enu8#ln36">
+      <Field id="sv2#area3#page9#enu8#fld12" name="Stand-ID" type="string" modifiable="true" attribute="ent2#att2" preloaded="false"/>
+      <Field id="sv2#area3#page9#enu8#fld13" name="Stand-navn: " type="string" modifiable="true" attribute="ent2#att3" preloaded="false"/>
+      <Field id="sv2#area3#page9#enu8#fld14" name="Forfattere: " type="text" modifiable="true" attribute="ent2#att6" preloaded="false"/>
+      <SelectionField id="sv2#area3#page9#enu8#sfld6" name="Studie: " type="string" role="rel2#role3"/>
+      <Link id="sv2#area3#page9#enu8#ln36" name="Registrer ny stand" to="sv2#miu13" type="normal" validate="true">
+        <LinkParameter id="sv2#area3#page9#enu8#ln36#par54" name="Stand Object_Ny Stand" source="entityBean" target="sv2#miu13.mov3#mpkg1#opm10#icu11#icp10"/>
+      </Link>
+      <Field id="sv2#area3#page9#enu8#fld1" name="Poster" type="blob" modifiable="true" contentType="image/png" attribute="ent2#att19"/>
+      <Field id="sv2#area3#page9#enu8#fld17" name="expoId" type="string" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="0" gr:y="155" id="sv2#area3#page9#seu9" name="Hent alle studier" entity="ent3">
+      <Link id="sv2#area3#page9#seu9#ln22" name="Send studier til ny-stand-skjema" to="sv2#area3#page9#enu8" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page9#seu9#ln22#par46" name="studyName_StandToStudy [label]" source="ent3#att9Array" target="sv2#area3#page9#enu8#sfld6_label"/>
+        <LinkParameter id="sv2#area3#page9#seu9#ln22#par48" name="studyId_StandToStudy [output]" source="ent3#att8Array" target="sv2#area3#page9#enu8#sfld6_output"/>
+      </Link>
+    </SelectorUnit>
+    <SelectorUnit gr:x="135" gr:y="235" id="sv2#area3#page9#seu10" name="Hent aktiv ExpoId" entity="ent8">
+      <Link id="sv2#area3#page9#seu10#ln17" name="Send aktiv expoId til ny-stand-skjema" to="sv2#area3#page9#enu8" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page9#seu10#ln17#par25" name="aktivExpoId_expoId" source="ent8#att24Array" target="sv2#area3#page9#enu8#fld17_slot"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page9#enu8">
+          <layout:Link link="sv2#area3#page9#enu8#ln36"/>
+          <layout:Field field="sv2#area3#page9#enu8#fld12"/>
+          <layout:Field field="sv2#area3#page9#enu8#fld13"/>
+          <layout:Field field="sv2#area3#page9#enu8#fld14"/>
+          <layout:Field field="sv2#area3#page9#enu8#sfld6"/>
+          <layout:Field field="sv2#area3#page9#enu8#fld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

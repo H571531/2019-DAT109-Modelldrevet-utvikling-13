@@ -1,0 +1,136 @@
+<DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
+  <Entity id="User" name="Admin" duration="persistent" gr:x="20" gr:y="158" gr:hideAttributes="false" attributeOrder="userOID userName password email" db:database="db1" db:table="admin">
+    <Attribute name="oid" id="userOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="userName" id="userName" type="string" db:column="username"/>
+    <Attribute name="password" id="password" type="password" db:column="password"/>
+    <Attribute name="email" id="email" type="string" db:column="email"/>
+  </Entity>
+  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="178" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+    <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
+  </Entity>
+  <Entity id="Module" name="Module" duration="persistent" gr:x="472" gr:y="167" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+    <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
+    <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
+    <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
+  </Entity>
+  <Relationship id="User2Group_Group2User" name="User_Group" sourceEntity="User" targetEntity="Group" db:database="db1" db:table="user_group">
+    <RelationshipRole1 id="User2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="admin_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Group2User" name="users" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="113,42,-112,44" db:database="db1" db:table="admin">
+    <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
+      <db:JoinColumn attribute="userOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultGroup2User" name="defaultUsers" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2DefaultModule_DefaultModule2Group" name="Group_DefaultModule" sourceEntity="Group" targetEntity="Module" db:database="db1" db:table="group">
+    <RelationshipRole1 id="Group2DefaultModule" name="defaultModule" maxCard="1">
+      <db:JoinColumn attribute="groupOID" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="DefaultModule2Group" name="defaultGroups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="Group2Module_Module2Group" name="Group_Module" sourceEntity="Group" targetEntity="Module" gr:bendpoints="110,41,-115,41" db:database="db1" db:table="group_module">
+    <RelationshipRole1 id="Group2Module" name="modules" maxCard="N">
+      <db:JoinColumn attribute="groupOID" name="group_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="Module2Group" name="groups" maxCard="N">
+      <db:JoinColumn attribute="moduleOID" name="module_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="410" gr:y="435" id="ent1" name="Expo" duration="persistent" attributeOrder="ent1#att1 ent1#att4 ent1#att5" db:database="db1" db:table="expo">
+    <Attribute id="ent1#att1" key="true" name="expoid" type="string" db:column="expoid"/>
+    <Attribute id="ent1#att4" name="voteregistrationopen" type="boolean" db:column="voteregistrationopen"/>
+    <Attribute id="ent1#att5" name="statisticsOpenToPublic" type="boolean" db:column="statisticsopentopublic"/>
+  </Entity>
+  <Entity gr:x="440" gr:y="660" id="ent2" name="Stand" duration="persistent" attributeOrder="ent2#att2 ent2#att3 ent2#att6 ent2#att7 ent2#att13 ent2#att15 ent2#att18 ent2#att19" db:database="db1" db:table="stand">
+    <Attribute id="ent2#att2" key="true" name="standid" type="string" db:column="standid"/>
+    <Attribute id="ent2#att3" name="standName" type="string" db:column="standname"/>
+    <Attribute id="ent2#att6" name="authors" type="text" db:column="authors"/>
+    <Attribute id="ent2#att7" name="token" type="string" db:column="token"/>
+    <Attribute id="ent2#att13" name="studyId" type="string" derivationQuery="simpleImported::Self.rel2#role3.ent3#att8"/>
+    <Attribute id="ent2#att15" name="expoId" type="string" derivationQuery="simpleImported::Self.rel1#role1.ent1#att1"/>
+    <Attribute id="ent2#att18" name="antallStemmer" type="integer" derivationQuery="calculated::count(Self.rel4#role7(as Var1))" db:table="stand_antallstemmer_view" db:column="der_attr" storageType="file">
+      <db:JoinColumn attribute="ent2#att2" name="standid"/>
+    </Attribute>
+    <Attribute id="ent2#att19" name="poster" type="blob" contentType="image/png" db:column="poster"/>
+  </Entity>
+  <Entity gr:x="95" gr:y="680" id="ent3" name="Study" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att14" db:database="db1" db:table="study">
+    <Attribute id="ent3#att8" key="true" name="studyId" type="string" db:column="studyid"/>
+    <Attribute id="ent3#att9" name="studyName" type="string" db:column="studyname"/>
+    <Attribute id="ent3#att14" name="instituteId" type="string" derivationQuery="simpleImported::Self.rel3#role5.ent4#att10"/>
+  </Entity>
+  <Entity gr:x="145" gr:y="520" id="ent4" name="Institute" duration="persistent" attributeOrder="ent4#att10 ent4#att17" db:database="db1" db:table="institute">
+    <Attribute id="ent4#att10" key="true" name="instituteId" type="string" db:column="instituteid"/>
+    <Attribute id="ent4#att17" name="instituteName" type="string" db:column="institutename"/>
+  </Entity>
+  <Entity gr:x="850" gr:y="690" id="ent5" name="Vote" duration="persistent" db:database="db1" db:table="vote" attributeOrder="ent5#att11 ent5#att20">
+    <Attribute id="ent5#att11" key="true" name="voteId" type="integer" db:column="voteid"/>
+    <Attribute id="ent5#att20" name="votevalue" db:column="votevalue" type="integer" key="false"/>
+  </Entity>
+  <Entity gr:x="890" gr:y="470" id="ent6" name="Visitor" duration="persistent" attributeOrder="ent6#att12 ent6#att16" db:database="db1" db:table="visitor">
+    <Attribute id="ent6#att12" key="true" name="visitorId" type="string" db:column="visitorid"/>
+    <Attribute id="ent6#att16" name="token" type="string" db:column="token"/>
+  </Entity>
+  <Relationship id="rel1" name="Stand_Expo" sourceEntity="ent2" targetEntity="ent1" db:database="db1" db:table="stand">
+    <RelationshipRole1 id="rel1#role1" name="StandToExpo" maxCard="1">
+      <db:JoinColumn attribute="ent2#att2" name="standid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel1#role2" name="ExpoToStand" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="expo_expoid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Stand_Study" sourceEntity="ent2" targetEntity="ent3" db:database="db1" db:table="stand">
+    <RelationshipRole1 id="rel2#role3" name="StandToStudy" maxCard="1">
+      <db:JoinColumn attribute="ent2#att2" name="standid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="StudyToStand" maxCard="N">
+      <db:JoinColumn attribute="ent3#att8" name="study_studyid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel3" name="Study_Institute" sourceEntity="ent3" targetEntity="ent4" db:database="db1" db:table="study">
+    <RelationshipRole1 id="rel3#role5" name="StudyToInstitute" maxCard="1">
+      <db:JoinColumn attribute="ent3#att8" name="studyid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel3#role6" name="InstituteToStudy" maxCard="N">
+      <db:JoinColumn attribute="ent4#att10" name="institute_instituteid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel4" name="Stand_Vote" sourceEntity="ent2" targetEntity="ent5" db:database="db1" db:table="vote">
+    <RelationshipRole1 id="rel4#role7" name="StandToVote" maxCard="N">
+      <db:JoinColumn attribute="ent2#att2" name="stand_standid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="VoteToStand" maxCard="1">
+      <db:JoinColumn attribute="ent5#att11" name="voteid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel5" name="Visitor_Vote" sourceEntity="ent6" targetEntity="ent5" db:database="db1" db:table="vote">
+    <RelationshipRole1 id="rel5#role9" name="VisitorToVote" maxCard="N">
+      <db:JoinColumn attribute="ent6#att12" name="visitor_visitorid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="VoteToVisitor" maxCard="1">
+      <db:JoinColumn attribute="ent5#att11" name="voteid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <db:Database id="db1" name="Database1" type="MySQL" url="jdbc:mysql://localhost:3306/exposystem" username="tohovi" cryptedPassword="true" password="YXVmZTgyNjY="/>
+  <Entity gr:x="705" gr:y="415" id="ent8" name="AktivExpo" duration="persistent" attributeOrder="ent8#att23 ent8#att24" db:database="db1" db:table="aktivexpo">
+    <Attribute id="ent8#att23" key="true" name="oid" type="integer" db:column="oid"/>
+    <Attribute id="ent8#att24" name="aktivExpoId" type="string" derivationQuery="simpleImported::Self.rel7#role14.ent1#att1"/>
+  </Entity>
+  <Relationship id="rel7" name="Expo_AktivExpo" sourceEntity="ent1" targetEntity="ent8" db:database="db1" db:table="aktivexpo">
+    <RelationshipRole1 id="rel7#role13" name="ExpoToAktivExpo" maxCard="1">
+      <db:JoinColumn attribute="ent1#att1" name="expo_expoid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel7#role14" name="AktivExpoToExpo" maxCard="1">
+      <db:JoinColumn attribute="ent8#att23" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+</DataModel>

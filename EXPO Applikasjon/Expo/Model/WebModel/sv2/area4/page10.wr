@@ -1,0 +1,30 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="0" id="sv2#area4#page10" name="Top Stands" protected="false">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#area4#page10#inu2" name="Top 5" entity="ent2" displayAttributes="ent2#att3 ent2#att6 ent2#att18" maxResults="5">
+      <SortAttribute attribute="ent2#att18" order="descending"/>
+      <SortAttribute attribute="ent2#att3" order="descending"/>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area4#page10#inu2">
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="ent2#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

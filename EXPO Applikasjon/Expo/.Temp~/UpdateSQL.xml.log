@@ -1,0 +1,28 @@
+[30 apr 2019 16:33:45] DEBUG Executing SQL script
+[30 apr 2019 16:33:45] INFO ================================================================================
+[30 apr 2019 16:33:45] INFO onError= 'stop'
+[30 apr 2019 16:33:45] INFO autoCommit= 'false'
+[30 apr 2019 16:33:45] INFO username= 'tohovi'
+[30 apr 2019 16:33:45] INFO outputPath= 'D:\WebRatio\Workspace\Expo\.Temp~\UpdateSQL.xml'
+[30 apr 2019 16:33:45] INFO outputLogPath= 'D:\WebRatio\Workspace\Expo\.Temp~\UpdateSQL.xml.log'
+[30 apr 2019 16:33:45] INFO encoding= ''
+[30 apr 2019 16:33:45] INFO driverClass= 'com.mysql.jdbc.Driver'
+[30 apr 2019 16:33:45] INFO sqlScript= 'D:\WebRatio\Workspace\Expo\.Temp~\UpdateSQL.sql'
+[30 apr 2019 16:33:45] INFO eventSocketPort= '57702'
+[30 apr 2019 16:33:45] INFO statementSeparator= ';'
+[30 apr 2019 16:33:45] INFO derby.system.home= 'D:\WebRatio\Workspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[30 apr 2019 16:33:45] INFO password= 'aufe8266'
+[30 apr 2019 16:33:45] INFO url= 'jdbc:mysql://localhost:3306/exposystem'
+[30 apr 2019 16:33:45] INFO ================================================================================
+[30 apr 2019 16:33:45] INFO Connecting to the Database...
+[30 apr 2019 16:33:45] INFO Database connection estabilished
+[30 apr 2019 16:33:45] INFO transaction isolation: 4
+[30 apr 2019 16:33:45] DEBUG ================================================================================
+[30 apr 2019 16:33:45] DEBUG Executing SQL script file: D:\WebRatio\Workspace\Expo\.Temp~\UpdateSQL.sql
+[30 apr 2019 16:33:45] DEBUG Executing statement:  create table `aktivexpo` ( `oid`  integer  not null, primary key (`oid`) )
+[30 apr 2019 16:33:45] DEBUG Executing statement:    alter table `aktivexpo`  add column  `expo_expoid`  varchar(255)
+[30 apr 2019 16:33:46] DEBUG Executing statement:  alter table `aktivexpo`   add index fk_aktivexpo_expo (`expo_expoid`), add constraint fk_aktivexpo_expo foreign key (`expo_expoid`) references `expo` (`expoid`)
+[30 apr 2019 16:33:46] DEBUG ================================================================================
+[30 apr 2019 16:33:46] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[30 apr 2019 16:33:46] INFO Database connection closed
+[30 apr 2019 16:33:46] DEBUG Total time: 598 milliseconds

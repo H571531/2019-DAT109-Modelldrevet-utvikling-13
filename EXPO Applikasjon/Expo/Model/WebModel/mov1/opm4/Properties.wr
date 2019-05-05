@@ -1,0 +1,43 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="110" gr:y="285" id="mov1#opm4" name="Registrer ny Visitor">
+  <OperationUnits>
+    <InputCollectorUnit id="mov1#opm4#icu5" gr:x="30" gr:y="60" linkOrder="mov1#opm4#icu5#ln6">
+      <InputCollectorParameter id="mov1#opm4#icu5#icp4" name="Telefonnummer"/>
+      <OKLink id="mov1#opm4#icu5#oln1" name="Send visitorId" to="mov1#opm4#seu8">
+        <LinkParameter id="mov1#opm4#icu5#oln1#par10" name="Telefonnummer_VisitorId [visitorId]" source="mov1#opm4#icu5#icp4" target="mov1#opm4#seu8#su12#kcond3.ent6#att12"/>
+      </OKLink>
+      <Link id="mov1#opm4#icu5#ln6" name="Send telefonnummer til ny Visitor" to="mov1#opm4#cru3" type="transport" validate="true" gr:bendpoints="201,148,-249,-57">
+        <LinkParameter id="mov1#opm4#icu5#ln6#par17" name="Telefonnummer_visitorId" source="mov1#opm4#icu5#icp4" target="mov1#opm4#cru3.ent6#att12"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="540" gr:y="265" id="mov1#opm4#cru3" name="Registrer deg!" entity="ent6">
+      <OKLink id="mov1#opm4#cru3#oln14" name="Ny Visitor registrert" to="mov1#opm4#okcu4" automaticCoupling="true"/>
+      <Link id="mov1#opm4#cru3#ln12" name="Husk Visitor i session" to="mov1#opm4#stu3" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#cru3#ln12#par19" name="visitorId_VisitorTlf" source="ent6#att12Array" target="mov1#opm4#stu3.ctx2"/>
+      </Link>
+    </CreateUnit>
+    <OKCollectorUnit gr:x="800" gr:y="100" id="mov1#opm4#okcu4" name="Registrering ok">
+      <OutputCollectorParameter id="mov1#opm4#okcu4#ocp9" name="Valgt Stand"/>
+    </OKCollectorUnit>
+    <SetUnit gr:x="230" gr:y="325" id="mov1#opm4#stu3" name="Husk Visitor" contextParameters="ctx2"/>
+    <GetUnit gr:x="570" gr:y="390" id="mov1#opm4#gtu8" name="Hent valgt stand" contextParameters="ctx1">
+      <Link id="mov1#opm4#gtu8#ln39" name="Send id til sist bes&#248;kte Stand" to="mov1#opm4#okcu4" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#gtu8#ln39#par58" name="ValgtStand_Valgt Stand" source="mov1#opm4#gtu8.ctx1" target="mov1#opm4#okcu4#ocp9"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="315" gr:y="80" id="mov1#opm4#seu8" name="Hent visitor" entity="ent6" linkOrder="mov1#opm4#seu8#ln7">
+      <Selector id="mov1#opm4#seu8#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov1#opm4#seu8#su12#kcond3" name="VisitorId" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov1#opm4#seu8#oln2" name="Finnes Visitor?" to="mov1#opm4#inn3">
+        <LinkParameter id="mov1#opm4#seu8#oln2#par13" name="visitorId_Input" source="ent6#att12Array" target="mov1#opm4#inn3.isnotnull"/>
+      </OKLink>
+      <Link id="mov1#opm4#seu8#ln7" name="Flow7" to="mov1#opm4#stu3" type="transport" validate="true">
+        <LinkParameter id="mov1#opm4#seu8#ln7#par18" name="visitorId_VisitorTlf" source="ent6#att12Array" target="mov1#opm4#stu3.ctx2"/>
+      </Link>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="475" gr:y="95" id="mov1#opm4#inn3" name="Allerede registrert?">
+      <KOLink id="mov1#opm4#inn3#kln7" name="Opprett ny bruker" to="mov1#opm4#cru3" automaticCoupling="true"/>
+      <OKLink id="mov1#opm4#inn3#oln10" name="Allerede registrert" to="mov1#opm4#okcu4" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</OperationModule>

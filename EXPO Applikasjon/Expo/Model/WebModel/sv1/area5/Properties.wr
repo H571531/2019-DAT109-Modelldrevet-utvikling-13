@@ -1,0 +1,10 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="1095" gr:y="340" id="sv1#area5" name="Statistikk" landmark="true" defaultPage="sv1#area5#miu16" landmarks="sv1#area5#miu16">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="150" gr:y="155" id="sv1#area5#miu16" moduleId="mov1#hym2" action="false" name="Statistikk" landmark="true">
+      <OKLink id="sv1#area5#miu16#oln41" name="Tilbake til alle stands" to="sv1#area1#page2" automaticCoupling="true"/>
+      <KOLink id="sv1#area5#miu16#kln8" name="Statistikk ikke tilgjengelig" to="sv1#area5#page11#mssu4">
+        <LinkParameter id="sv1#area5#miu16#kln8#par62" name="Beskjed om ikke tilgjengelig_Shown Messages" source="mov1#hym2#kocu4#ocp10" target="sv1#area5#page11#mssu4.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

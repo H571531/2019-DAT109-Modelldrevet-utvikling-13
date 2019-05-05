@@ -1,0 +1,28 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Administrator Site View" protected="true" landmarks="sv2#area2 sv2#area3 sv2#area4" homePage="sv2#area2#page6" customURLName="admin">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="460" gr:y="555" id="sv2#miu9" action="true" name="Registrer ny admin" moduleId="mov3#opm6">
+      <OKLink id="sv2#miu9#oln17" name="Bekreft ny admin" to="sv2#area2#page6#enu4" gr:bendpoints="-154,6,106,21">
+        <LinkParameter id="sv2#miu9#oln17#par24" name="Bekreftelsemelding_Key Condition [oid]" source="mov3#opm6#okcu5#ocp12" target="sv2#area2#page6#enu4.userOID"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="470" gr:y="655" id="sv2#miu10" action="true" name="Oppdater Expo" moduleId="mov3#opm7">
+      <OKLink id="sv2#miu10#oln16" name="Bekreft oppdatering" to="sv2#area2#page6#mssu7">
+        <LinkParameter id="sv2#miu10#oln16#par23" name="Bekreftelsemelding_Shown Messages" source="mov3#opm7#okcu6#ocp11" target="sv2#area2#page6#mssu7.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1220" gr:y="535" id="sv2#miu12" action="true" name="Oppdater Stand" moduleId="mov3#mpkg1#opm9">
+      <OKLink id="sv2#miu12#oln29" name="Stand oppdatert" to="sv2#area3#page8#mssu3">
+        <LinkParameter id="sv2#miu12#oln29#par47" name="Confirmation message_Shown Messages" source="mov3#mpkg1#opm9#okcu8#ocp5" target="sv2#area3#page8#mssu3.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1265" gr:y="770" id="sv2#miu13" action="true" name="Registrer ny Stand" moduleId="mov3#mpkg1#opm10" linkOrder="sv2#miu13#ln37">
+      <OKLink id="sv2#miu13#oln34" name="Stand oppdatert" to="sv2#area3#page8#mssu3">
+        <LinkParameter id="sv2#miu13#oln34#par81" name="Bekreftelse_Shown Messages" source="mov3#mpkg1#opm10#okcu9#ocp6" target="sv2#area3#page8#mssu3.shownMessages"/>
+      </OKLink>
+      <Link id="sv2#miu13#ln37" name="Send stand-id til oppdatert stand-details" to="sv2#area3#page8#dau2" type="transport" validate="true">
+        <LinkParameter id="sv2#miu13#ln37#par55" name="StandId_KeyCondition8 [standid]" source="mov3#mpkg1#opm10#okcu9#ocp7" target="sv2#area3#page8#dau2#su8#kcond8.ent2#att2"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <LogoutUnit gr:x="440" gr:y="355" id="sv2#lou1" name="Admin logout" siteView="sv1"/>
+  </OperationUnits>
+</SiteView>

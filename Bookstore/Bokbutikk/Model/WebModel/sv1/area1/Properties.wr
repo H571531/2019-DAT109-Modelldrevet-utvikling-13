@@ -1,0 +1,9 @@
+<Area xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="230" gr:y="210" id="sv1#area1" name="Shopping" landmark="true" defaultPage="sv1#area1#page1" landmarks="sv1#area1#page1">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="615" gr:y="5" id="sv1#area1#miu1" action="true" name="Add to cart" moduleId="mov1#opm4">
+      <OKLink id="sv1#area1#miu1#oln12" name="Confirmation" to="sv1#area1#page4#mssu2">
+        <LinkParameter id="sv1#area1#miu1#oln12#par13" name="ComfirmationMessage_Shown Messages" source="mov1#opm4#okcu5#ocp3" target="sv1#area1#page4#mssu2.shownMessages"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</Area>

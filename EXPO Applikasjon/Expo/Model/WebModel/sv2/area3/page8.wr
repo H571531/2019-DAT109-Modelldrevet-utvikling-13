@@ -1,0 +1,145 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="295" gr:y="0" id="sv2#area3#page8" name="Endre stand" linkOrder="sv2#area3#page8#ln30">
+  <ContentUnits>
+    <DataUnit gr:x="0" gr:y="125" id="sv2#area3#page8#dau2" name="Stand" entity="ent2" displayAttributes="ent2#att3 ent2#att6 rel2#role3.ent3#att9 rel2#role3.rel3#role5.ent4#att17 ent2#att18" linkOrder="sv2#area3#page8#dau2#ln61">
+      <Selector id="sv2#area3#page8#dau2#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#area3#page8#dau2#su8#kcond8" name="StandId" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#area3#page8#dau2#ln55" name="Send stand-id til oppdaterings-skjema" to="sv2#area3#page8#enu7" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par84" name="expoId_expoId" source="data.ent2#att15" target="sv2#area3#page8#enu7#fld18_slot"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par85" name="standid_Key Condition [standid]" source="data.ent2#att2" target="sv2#area3#page8#enu7.ent2#att2"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par86" name="poster_Poster" source="data.ent2#att19" target="sv2#area3#page8#enu7#fld9_slot"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par87" name="standName_Stand-navn: " source="data.ent2#att3" target="sv2#area3#page8#enu7#fld7_slot"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par88" name="StandToStudy.studyId_Studie:  - Preselection" source="data.rel2#role3_ent3#att8" target="sv2#area3#page8#enu7#sfld4_presel"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par89" name="StandToStudy.studyName_Studie:  [label]" source="data.rel2#role3$ent3#att9" target="sv2#area3#page8#enu7#sfld4_label"/>
+        <LinkParameter id="sv2#area3#page8#dau2#ln55#par90" name="StandToStudy.studyId_Studie:  [output]" source="data.rel2#role3_ent3#att8" target="sv2#area3#page8#enu7#sfld4_output"/>
+      </Link>
+      <Link id="sv2#area3#page8#dau2#ln57" name="Send stand-id til poster" to="sv2#area3#page8#mssu9" type="transport" validate="true">
+        <LinkParameter id="sv2#area3#page8#dau2#ln57#par93" name="poster_standURL" source="data.ent2#att19" target="sv2#area3#page8#mssu9.sv2#area3#page8#mssu9#ph5"/>
+      </Link>
+      <Link id="sv2#area3#page8#dau2#ln61" name="Hent QR-kode" to="sv2#area3#page13#seu19" type="normal" validate="true">
+        <LinkParameter id="sv2#area3#page8#dau2#ln61#par96" name="standid_standId [standid]" source="data.ent2#att2" target="sv2#area3#page13#seu19#su13#kcond13.ent2#att2"/>
+      </Link>
+    </DataUnit>
+    <EntryUnit gr:x="5" gr:y="265" id="sv2#area3#page8#enu7" name="Oppdater Stand" entity="ent2" linkOrder="sv2#area3#page8#enu7#ln29">
+      <Field id="sv2#area3#page8#enu7#fld7" name="Stand-navn: " type="string" modifiable="true" attribute="ent2#att3" preloaded="true"/>
+      <Field id="sv2#area3#page8#enu7#fld8" name="Forfattere: " type="text" modifiable="true" attribute="ent2#att6"/>
+      <SelectionField id="sv2#area3#page8#enu7#sfld4" name="Studie: " type="string" role="rel2#role3"/>
+      <Link id="sv2#area3#page8#enu7#ln29" name="Oppdater Stand" to="sv2#miu12" type="normal" validate="true">
+        <LinkParameter id="sv2#area3#page8#enu7#ln29#par45" name="Stand Object_Stand" source="key.ent2#att2" target="sv2#miu12.mov3#mpkg1#opm9#icu10#icp9"/>
+        <LinkParameter id="sv2#area3#page8#enu7#ln29#par76" name="Forfattere: _Stand forfattere" source="sv2#area3#page8#enu7#fld8" target="sv2#miu12.mov3#mpkg1#opm9#icu10#icp14"/>
+        <LinkParameter id="sv2#area3#page8#enu7#ln29#par77" name="Stand-navn: _Stand navn" source="sv2#area3#page8#enu7#fld7" target="sv2#miu12.mov3#mpkg1#opm9#icu10#icp13"/>
+        <LinkParameter id="sv2#area3#page8#enu7#ln29#par78" name="Poster_Stand poster" source="sv2#area3#page8#enu7#fld9" target="sv2#miu12.mov3#mpkg1#opm9#icu10#icp15"/>
+        <LinkParameter id="sv2#area3#page8#enu7#ln29#par80" name="Studie: _Studie" source="sv2#area3#page8#enu7#sfld4" target="sv2#miu12.mov3#mpkg1#opm9#icu10#icp16"/>
+      </Link>
+      <Field id="sv2#area3#page8#enu7#fld9" name="Poster" type="blob" modifiable="true" contentType="image/png" attribute="ent2#att19" preloaded="true"/>
+      <Field id="sv2#area3#page8#enu7#fld18" name="expoId" type="string" modifiable="false" preloaded="true" hidden="true"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="115" gr:y="175" id="sv2#area3#page8#mssu3" name="Bekreftelse"/>
+    <SelectorUnit gr:x="15" gr:y="445" id="sv2#area3#page8#seu11" name="Hent alle studier" entity="ent3">
+      <Link id="sv2#area3#page8#seu11#ln25" name="Send studier til skjema" to="sv2#area3#page8#enu7" type="transport" validate="true" gr:bendpoints="61,-84,71,96">
+        <LinkParameter id="sv2#area3#page8#seu11#ln25#par50" name="studyName_StandToStudy [label]" source="ent3#att9Array" target="sv2#area3#page8#enu7#sfld4_label"/>
+        <LinkParameter id="sv2#area3#page8#seu11#ln25#par60" name="studyId_StandToStudy [output]" source="ent3#att8Array" target="sv2#area3#page8#enu7#sfld4_output"/>
+      </Link>
+    </SelectorUnit>
+    <MultiMessageUnit id="sv2#area3#page8#mssu9" name="Poster" customDescriptor="false" gr:showAllParts="false" gr:x="25" gr:y="0">
+      <Placeholder id="sv2#area3#page8#mssu9#ph5" name="standURL"/>
+      <Message xml:space="preserve">&lt;img src="$$standURL$$" style="width:30em"&gt;</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page8#mssu3"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page8#dau2">
+          <layout:Attribute attribute="ent2#att3"/>
+          <layout:Attribute attribute="ent2#att6"/>
+          <layout:Attribute attribute="rel2#role3.ent3#att9"/>
+          <layout:Attribute attribute="rel2#role3.rel3#role5.ent4#att17"/>
+          <layout:Attribute attribute="ent2#att18"/>
+          <layout:Link link="sv2#area3#page8#dau2#ln61"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page8#enu7">
+          <layout:Link link="sv2#area3#page8#enu7#ln29"/>
+          <layout:Field field="sv2#area3#page8#enu7#fld7"/>
+          <layout:Field field="sv2#area3#page8#enu7#fld8"/>
+          <layout:Field field="sv2#area3#page8#enu7#sfld4"/>
+          <layout:Field field="sv2#area3#page8#enu7#fld9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#area3#page8#mssu9">
+          <layout:LayoutParameter name="contentType" value="text/html" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv2#area3#page8#ln30" name="Tilbake til alle stands" to="sv2#area3#page7" automaticCoupling="true" type="normal" validate="true"/>
+</Page>
